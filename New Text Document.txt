@@ -1,0 +1,44 @@
+customer add= customer_add
+customer view/edit=customer_view
+
+vendor add= vendor_add
+vendor edit/view=vendor_view
+
+product=product_add
+product delete=product_view
+
+bill=bill_add
+bill_edit=bill_view
+
+purchase=purchase_add
+purchase=purchase_view
+
+unit=unit
+
+bill payment add=paymnet_add
+
+purchase payment= purchase_payment
+
+stock_report= stock_report
+
+item report= item_report
+
+customer_sales= customer_sales_report
+
+product stock data= product_stock
+
+
+all customer sales including gst= allcustomer_sales
+
+bank=bank
+
+
+companydetail=companydetail
+
+
+dashboard =dashboard
+
+
+"okey done ji
+
+

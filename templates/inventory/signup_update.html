@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V13</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/static/signup/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/signup/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/signup/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/signup/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/signup/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/signup/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/static/signup/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/signup/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/signup/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/static/signup/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/signup/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/signup/css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--===============================================================================================-->
+</head>
+<body style="background-color: #999999;" onload="password_check(this.value);">
+
+	<!-- ============================================================================================ -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+		  $("#success-alert").hide();
+		  $("#myWish").show(function showAlert() {
+		    $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
+		      $("#success-alert").slideUp(500);
+		    });
+		  });
+		});
+	</script>
+
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+	    {% for message in messages %}
+	    	<div id="myWish">
+		    	<div class="alert alert-success alert-dismissible" id="success-alert">
+				  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				  		<p >{{message}}!</p>
+				</div>
+		    </div>
+		{% endfor %}
+	  {% endif %}
+	{% endwith %}
+	
+	<!-- ============================================================================================= -->
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="login100-more" style="background-image: url('/static/signup/images/bg-01.jpg');"></div>
+
+			<div class="wrap-login100 p-l-50 p-r-100 p-t-72 p-b-50">
+				<form class="login100-form validate-form" method="POST" action="/inventory/signup">
+					<span class="login100-form-title p-b-59">
+						Sign Up
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate="Name is required">
+						<span class="label-input100">Full Name</span>
+						<input class="input100" type="text" name="name" value="{{customer_details.name}}" placeholder="Name...">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Mobile is required">
+						<span class="label-input100">Mobile Number</span>
+
+						{% if customer_details.mobile_verfication == 1 %}
+							<input class="input100" type="text" name="mobilenumber" value="{{customer_details.phone}}" placeholder="Mobile  number..." readonly="">
+							<a href="/inventory/change_number">change</a>
+						{% else %}
+							<input class="input100" type="text" name="mobilenumber" value="{{customer_details.phone}}" placeholder="Mobile number...">
+							<a href="/inventory/mobile_verify">verify</a>
+						{% endif %}
+
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@gmail.com">
+						<span class="label-input100">Email</span>
+
+						{% if customer_details.email_verification == 1 %}
+							<input class="input100" type="text" name="email" value="{{customer_details.email}}" placeholder="Email addess..." readonly="">
+							<a href="#">change</a>
+						{% else %}
+							<input class="input100" type="text" name="email" value="{{customer_details.email}}" placeholder="Email addess...">
+							<a href="//inventory/gmail_verify">verify</a>
+						{% endif %}
+
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Username is required">
+						<span class="label-input100">Username</span>
+
+							<input class="input100" type="text" name="username" value="change username click change" placeholder="Username..." readonly="">
+							<a href="/inventory/change_username">change</a>
+
+						<span class="focus-input100"></span>
+					</div>
+
+					<label for="Do you want change password!">Do you want change password!</label><br>
+					<input type="radio" id="yes" name="pass_change" value="yes" onclick="password_check(this.value);">
+					<label for="yes">yes</label><br>
+					<input checked="" type="radio" id="no" name="pass_change" value="no" onclick="password_check(this.value);">
+					<label for="no">no</label><br>
+
+					<div id="oldpass" class="wrap-input100 validate-input" data-validate = "Password is required">
+						<span class="label-input100">Old Password</span>
+						<input class="input100" type="text" name="oldpass" placeholder="*************">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div id="pass" class="wrap-input100 validate-input" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="text" id="pass_" name="pass" value="" placeholder="*************">
+						<span class="focus-input100"></span>
+					</div>
+
+
+					<div id="repeat_pass" class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
+						<span class="label-input100">New Password</span>
+						<input class="input100" type="text" id="repeat_pass_" name="repeat_pass" value="" placeholder="*************">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+
+								<button class="login100-form-btn" >
+									Update
+								</button>
+							
+							
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+<!--===============================================================================================-->
+	<script src="/static/signup/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/signup/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/signup/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/signup/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/signup/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/signup/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/static/signup/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/signup/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/signup/js/main.js"></script>
+
+</body>
+</html>
+
+<!-- ============================================================================================= -->
+<script type="text/javascript">
+	function password_check(value) 
+	{	
+		
+		if (value=='yes')
+		{
+			document.getElementById("pass").style.display='';	
+			document.getElementById("repeat_pass").style.display='';	
+			document.getElementById("pass_").value='';	
+			document.getElementById("repeat_pass_").value='';
+		}
+		else
+		{
+
+			document.getElementById("pass").style.display='none';	
+			document.getElementById("repeat_pass").style.display='none';
+			document.getElementById("pass_").value='no change';	
+			document.getElementById("repeat_pass_").value='no change';		
+		}
+	}
+</script>

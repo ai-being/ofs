@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="button" id = "btnAdd" onclick = "AddDropDownList()" value = "Add DropDownList" />
+    <hr />
+    <div id = "dvContainer"></div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        function AddDropDownList() {
+            //Build an array containing Customer records.
+            var customers = [
+                { CustomerId: 1, Name: "John Hammond", Country: "United States" },
+                { CustomerId: 2, Name: "Mudassar Khan", Country: "India" },
+                { CustomerId: 3, Name: "Suzanne Mathews", Country: "France" },
+                { CustomerId: 4, Name: "Robert Schidner", Country: "Russia" }
+            ];
+            //Create a DropDownList element.
+            var ddlCustomers = $("<select />");
+ 
+            //Add the Options to the DropDownList.
+            $(customers).each(function () {
+               var option = $("<option />");
+ 
+                //Set Customer Name in Text part.
+                option.html(this.Name);
+ 
+                //Set CustomerId in Value part.
+                option.val(this.CustomerId);
+ 
+                //Add the Option element to DropDownList.
+                ddlCustomers.append(option);
+            });
+ 
+            //Reference the container DIV.
+            var dvContainer = $("#dvContainer")
+ 
+            //Add the DropDownList to DIV.
+            var div = $("<div />");
+            div.append(ddlCustomers);
+ 
+            //Create a Remove Button.
+            var btnRemove = $("<input type = 'button' value = 'Remove' />");
+            btnRemove.click(function () {
+                $(this).parent().remove();
+            });
+ 
+            //Add the Remove Buttton to DIV.
+            div.append(btnRemove);
+ 
+            //Add the DIV to the container DIV.
+            dvContainer.append(div);
+        };
+    </script>
+</body>
+</html>

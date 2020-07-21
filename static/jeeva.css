@@ -1,0 +1,737 @@
+p.customer_id
+{
+  position: absolute;
+  left: 1px;
+  top: 100px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+
+}
+
+p.customer_id label
+{
+    display:inline-block;
+    margin-right:2px;
+    vertical-a
+}
+p.buyer_detail
+{
+  position: absolute;
+  left: 0px;
+  top: 180px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+    
+}
+
+p.buyer_detail label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.buyer_tin
+{
+  position: absolute;
+  left: 1px;
+  top: 250px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+    
+}
+
+p.buyer_tin label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.gstin
+{
+  position: absolute;
+  left: px;
+  top: 320px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.gstin label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.cash_credit
+{
+   position: absolute;
+  right : 550px;
+  top: 100px;
+  width: 300px;
+  padding: 10px;
+  margin: auto; 
+}
+
+p.cash_credit label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.date
+{
+  position: absolute;
+  right: 350px;
+  top: 100px;
+  width: 200px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.date label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+
+p.due_date
+{
+  position: absolute;
+  right: 150px;
+  top: 100px;
+  width: 200px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.due_date label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.customer_id_type
+{
+    position: absolute;
+ right: 240px;
+  top: 300px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.customer_id_type label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+  
+  p.delivery_type
+{
+   position: absolute;
+  left: px;
+  top: 400px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.delivery_type label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+  
+ 
+p.lorry_shed
+{
+    position: absolute;
+  right: 550px;
+  top: 200px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.lorry_shed label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+p.lorry_contact
+{
+  position: absolute;
+  right: 250px;
+  top: 208px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.lorry_contact label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+
+
+p.dispatch_through
+{
+    position: absolute;
+  left: px;
+  top: 1000px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.dispatch_through label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.lr_number
+{
+    left: px;
+  width: 30%;
+  padding: 10px;
+  margin: auto;
+}
+
+p.lr_number label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.vehicle_number
+{
+    left: px;
+  width: 30%;
+  padding: 10px;
+  margin: auto;
+}
+
+p.vehicle_number label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+p.p.o_number
+{
+    left: px;
+  width: 30%;
+  padding: 10px;
+
+}
+
+p.p.o_number label
+{
+    display:inline-block;
+    margin-right:5px;
+}
+
+p.grand_total
+{
+  position: absolute;
+  right: 0px;
+  top: 650px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.grand_total label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.igst
+{
+    position: absolute;
+  right: 100px;
+  top: 1200px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.igst label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.cgst
+{
+    position: absolute;
+  right: 100px;
+  top: 1300px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.cgst label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.sgst
+{
+    position: absolute;
+  right: 100px;
+  top: 1400px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.sgst label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+p.e-way_reference
+{
+    float: left;
+    width 30%;
+}
+p.e-way_reference label
+{
+    float: left;
+    ;
+}
+
+
+
+
+
+
+div.customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  position: absolute;
+  border-collapse: collapse;
+  width: 100%;
+  top: 500px;
+  margin: auto;
+
+}
+
+div.customers td, div.customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+div.customers tr:nth-child(even){background-color: #f2f2f2;}
+
+div.customers tr:hover {background-color: #ddd;}
+
+div.customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+
+
+
+  
+p.customer_id
+{
+  position: absolute;
+  left: 1px;
+  top: 100px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+
+}
+
+p.customer_id label
+{
+    display:inline-block;
+    margin-right:2px;
+    vertical-a
+}
+p.buyer_detail
+{
+  position: absolute;
+  left: 0px;
+  top: 180px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+    
+}
+
+p.buyer_detail label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.buyer_tin
+{
+  position: absolute;
+  left: 1px;
+  top: 250px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+    
+}
+
+p.buyer_tin label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.gstin
+{
+  position: absolute;
+  left: px;
+  top: 320px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.gstin label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.cash_credit
+{
+   position: absolute;
+  right : 550px;
+  top: 100px;
+  width: 300px;
+  padding: 10px;
+  margin: auto; 
+}
+
+p.cash_credit label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.date
+{
+  position: absolute;
+  right: 350px;
+  top: 100px;
+  width: 200px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.date label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+
+p.due_date
+{
+  position: absolute;
+  right: 150px;
+  top: 100px;
+  width: 200px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.due_date label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.customer_id_type
+{
+    position: absolute;
+ right: 240px;
+  top: 300px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.customer_id_type label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+  
+  p.delivery_type
+{
+   position: absolute;
+  left: px;
+  top: 400px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.delivery_type label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+  
+ 
+p.lorry_shed
+{
+    position: absolute;
+  right: 550px;
+  top: 200px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.lorry_shed label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+p.lorry_contact
+{
+  position: absolute;
+  right: 250px;
+  top: 208px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.lorry_contact label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+
+
+p.dispatch_through
+{
+  position: absolute;
+  left: px;
+  top: 1000px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.dispatch_through label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.lr_number
+{
+  position: relative;
+  left: px;
+  width: 30%;
+  padding: 10px;
+}
+
+p.lr_number label
+{
+   
+    
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.vehicle_number
+{
+  position: relative;
+  left: px;
+  width: 30%;
+  padding: 10px;
+}
+
+p.vehicle_number label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+p.p_o_number
+{
+  position: relative;
+  left: px;
+  width: 30%;
+  padding: 10px;
+
+}
+
+p.p_o_number label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+   
+}
+p.e-way_reference
+{
+  position: relative;
+  left: px;
+  width: 30%;
+  padding: 10px;
+}
+p.e-way_reference label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+    
+}
+
+p.grand_total
+{
+  position: absolute;
+  right: 0px;
+  top: 650px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.grand_total label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.igst
+{
+    position: absolute;
+  right: 100px;
+  top: 1200px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.igst label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.cgst
+{
+    position: absolute;
+  right: 100px;
+  top: 1300px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.cgst label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.sgst
+{
+    position: absolute;
+  right: 100px;
+  top: 1400px;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+}
+
+p.sgst label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+div.customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  position: absolute;
+  border-collapse: collapse;
+  width: 100%;
+  top: 500px;
+  margin: auto;
+
+}
+
+div.customers td, div.customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+div.customers tr:nth-child(even){background-color: #f2f2f2;}
+
+div.customers tr:hover {background-color: #ddd;}
+
+div.customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+
+
+
+  

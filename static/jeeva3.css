@@ -1,0 +1,445 @@
+p.customer_id
+{
+  position: absolute;
+  left: 0%;
+  top: 170px;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+
+
+}
+.select-editable {
+position: absolute;
+  left: 0px;
+  top: 170px;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+  }
+.select-editable select { position:absolute; top:0px; left:0px; font-size:14px; border:none; width:120px; margin:0; }
+.select-editable input { position:absolute; top:0px; left:0px; width:100px; padding:1px; font-size:12px; border:none; }
+.select-editable select:focus, .select-editable input:focus { outline:none; }
+
+
+p.customer_id label
+{
+    display:inline-block;
+    margin-right:2px;
+    vertical-a
+}
+
+
+p.buyer_detail
+{
+  position: absolute;
+  left: 0px;
+  top: 240px;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+
+}
+p.shipping_address
+{
+
+  position: absolute;
+  left: 25%;
+  top: 240px;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+
+}
+
+
+
+p.invoice_lr_number
+{
+position: relative;
+top: 0px;
+width: 10%;
+left: 10px;
+}
+p.invoice_lr_number label
+{
+position: relative;
+
+}
+
+p.previous_invoice
+{
+position: absolute;
+top: 150px;
+width: 10%;
+left: 170px;
+}
+
+p.next_invoice
+{
+position: absolute;
+top: 150px;
+width: 10%;
+left: 220px;
+}
+p.invoice_search
+{
+position: absolute;
+top: 150px;
+width: 30%;
+left: 20%;
+}
+
+p.buyer_tin
+{
+  position: absolute;
+  left: 1px;
+  top: 250px;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+
+}
+
+p.buyer_tin label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.gstin
+{
+  position: absolute;
+  left: px;
+  top: 350px;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+}
+
+p.gstin label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.cash_credit
+{
+   position: absolute;
+  left : 45%;
+  top: 15%;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+}
+
+p.date
+{
+  position: absolute;
+  left: 65%;
+  top: 15%;
+  width: 12%;
+  padding: 10px;
+  margin: auto;
+}
+
+p.due_date
+{
+  position: absolute;
+  left: 76%;
+  top: 15%;
+  width: 12%;
+  padding: 10px;
+  margin: auto;
+}
+
+
+
+p.customer_id_type
+{
+  position: absolute;
+  left: 45%;
+  top: 25%;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+}
+
+
+
+  p.delivery_type
+{
+   position: absolute;
+  left: px;
+  top: 420px;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+}
+
+p.delivery_type label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+
+p.lorry_shed
+{
+  position: absolute;
+  left: 45%;
+  top: 40%;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+  display: inline-block;
+}
+
+p.lorry_contact
+{
+  position: absolute;
+  left: 65%;
+  top: 40%;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+  display: inline-block;
+}
+p.e_way_reference
+{
+  position: relative;
+  left: px;
+  width: 20%;
+  padding: 10px;
+}
+p.p_o_number
+{
+  position: relative;
+  bottom: 250px;
+  left: 0px;
+  width: 20%;
+  padding: 10px;
+
+}
+
+p.lr_number
+{
+  position: relative;
+  bottom: 130px;
+  left: 400px;
+  width: 20%;
+  padding: 10px;
+
+}
+
+
+p.vehicle_number
+{
+  position: relative;
+  bottom: 145px;
+  left: 400px;
+  width: 20%;
+  padding: 10px;
+}
+
+
+
+
+p.grand_total
+{
+  position: absolute;
+  right: 0px;
+  top: 650px;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+}
+
+
+
+p.igst
+{
+  position: absolute;
+  right: 100px;
+  top: 1200px;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+}
+
+p.igst label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.cgst
+{
+    position: absolute;
+  right: 100px;
+  top: 1300px;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+}
+
+p.cgst label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+
+p.sgst
+{
+    position: absolute;
+  right: 100px;
+  top: 1400px;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+}
+
+p.sgst label
+{
+    display:inline-block;
+    margin-right:5px;
+    vertical-a
+}
+p.e-way_reference
+{
+    float: left;
+    width 30%;
+}
+
+div.customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  position: absolute;
+  border-collapse: collapse;
+  width: 100%;
+  top: 500px;
+  margin: auto; display: block;
+
+
+}
+
+div.customers td, div.customers th {
+  border: 1px solid #ddd;
+  table-layout: fixed;
+  padding: 10px;
+  word-wrap: break-word;
+
+}
+
+div.customers tr:nth-child(even){background-color: #f2f2f2;}
+
+div.customers tr:hover {background-color: #ddd;}
+
+div.customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: auto;
+  background-color: #1ab2ff;
+  color: white;
+}
+
+.fix {
+  table-layout: fixed;
+  width: 100%;
+  word-wrap: break-word;
+  height: 420px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: block
+}
+.fix td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+.fix th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: auto;
+  background-color: #4CAF50;
+  color: white;
+  word-wrap: break-word;
+  table-layout: fixed;
+
+}
+
+
+
+.tableClassName tbody {
+  display: block;
+  height: 420px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.tableClassName td{
+  overflow: hidden;
+
+  }
+
+.trow60
+{
+width: 100px;
+}
+.trow350
+{
+width: 350px;
+}
+.trow90
+{
+width: 90px;
+}
+.trow65
+{
+width: 90px;
+}
+.trow200
+{
+width: 200px;
+}
+.trow100
+{
+width: 90px;
+}
+.button3 {
+background-color: #f44336;
+position:relative;
+    transition: .5s ease;
+    top: 250px;
+    left: 90%;
+    right: 0px;
+    bottom: -350px;
+}
+
+.editableBox {
+    width: 75px;
+    height: 30px;
+}
+
+
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DASHBOARD</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/inventory/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/static/inventory/assets/css/style.css">
+    <link rel="stylesheet" href="/static/inventory/assets/css/lib/chosen/chosen.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="/static/inventory/cities.js"></script>
+</head>
+
+<body>
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa   fa-users"></i>CUSTOMER</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/customer_add">CUSTOMER ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/customer_view">CUSTOMER EDIT</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>VENDOR</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon  ti-plus"></i><a href="/inventory/vendor_add">VENDOR ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/vendor_view">VENDOR EDIT</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>PRODUCTS</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/product_add">PRODUCT ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/product_view">PRODUCT EDIT</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>PURCHASE</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/purchase_add">PURCHASE ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/purchase_view">PURCHASE EDIT</a></li>
+                        </ul>
+                    </li>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>REPORTS</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/stock_report">STOCK REPORT</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/item_report">ITEM REPORT</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/customer_sales_report">CUSTOMER REPORT</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/inventory/bill_add"><i class="menu-icon fa fa-file-text-o"></i>BILLING </a>
+                        <a href="/inventory/bill_view"><i class="menu-icon fa fa-file-text-o"></i>BILLING EDIT</a>
+                    </li>
+                    <li>
+                        <a href="/inventory/product_stock"><i class="menu-icon fa fa-check-square-o"></i>PRODUCT STOCK </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/inventory/purchase_payment"><i class="menu-icon fa fa-check-square-o"></i>PURCHASE PAYMENT</a>
+                    </li>
+                    <li>
+                        <a href="/inventory/payment_add"><i class="menu-icon fa fa-check-square-o"></i>BILL PAYMENT</a>
+                    </li>
+                    <li>
+                        <a href="/inventory/bank"><i class="menu-icon fa fa-check-square-o"></i>BANK DETAILS </a>
+                    </li>
+                    <li>
+                        <a href="/inventory/companydetail"><i class="menu-icon fa fa-check-square-o"></i>COMPANY DETAILS</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <!-- <a class="navbar-brand" href="./"><img src="https://i.ibb.co/C8r9qLj/SARASWATHI-ELECTRICAL.jpg" height="100" width="100" alt="Logo"></a>
+                     -->
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                    </div>
+                </div>
+            </div>
+        </header><!-- /header -->
+        <!-- Header-->
+        <div class="content">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-warning card-header-icon">
+                            <div class="card-icon">
+                                <i class="fa fa-inr" aria-hidden="true"></i>
+                            </div>
+                            <p class="card-category">Target</p>
+                            <form method="POST" action="/inventory/dashboard">
+                                <h4 class="card-title">
+                                    <input type="text" style="border:0.8px;width: 100px" name="target" contentEditable="true" id="target" value="{{target}}">
+                                    <input type="submit" class="card-title" name="ADD" id="ADD" value="ADD">
+                                </h4>
+                            </form>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-success card-header-icon">
+                            <div class="card-icon">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            </div>
+                            <p class="card-category">Sales Revenue</p>
+                            <h3 class="card-title">₹{{gnt_tot}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-danger card-header-icon">
+                            <div class="card-icon">
+                                <i class="fa fa-inr" aria-hidden="true"></i>
+                            </div>
+                            <p class="card-category">Purchase Amount</p>
+                            <h3 class="card-title">{{gnd_pur}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-info card-header-icon">
+                            <div class="card-icon">
+                                <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                            </div>
+                            <p class="card-category">No of new customers</p>
+                            <h3 class="card-title">+{{gnd_cus}}</h3>
+                        </div>
+                        <script type="text/javascript">
+                        if ( {{ gnt_tot | int }} >= {{ target | int }} ) {
+                            alert('Congratulation Target Achieved')
+                        }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-chart">
+                        <style>
+                            #chartdiv {
+                                             width: 100%;
+                                             height: 500px;
+                                        }
+</style>
+                        <!-- Resources -->
+                        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+                        <!-- Chart code -->
+                        <script>
+                            am4core.ready(function() {
+
+                            // Themes begin
+                            am4core.useTheme(am4themes_material);
+                            am4core.useTheme(am4themes_animated);
+                            // Themes end
+
+                            var chart = am4core.create("chartdiv", am4charts.XYChart);
+                            chart.paddingRight = 20;
+
+                            var data = [];
+                            var visits = 10;
+                            var previousValue;
+                            details_data = {{ sales_value | tojson }};
+                            // alert('pass')
+                            for (var i = 0; i < {{ count }}; i++) {
+                                // alert('pk')
+                                // alert(i)
+                                visits = details_data[i]['amount']
+                                // alert(visits)
+
+                                if (i > 0) {
+                                    // add color to previous data item depending on whether current value is less or more than previous value
+                                    if (previousValue <= visits) {
+                                        data[i - 1].color = chart.colors.getIndex(0);
+                                    } else {
+                                        data[i - 1].color = chart.colors.getIndex(5);
+                                    }
+                                }
+
+                                data.push({ date: details_data[i]['date'], value: visits });
+                                previousValue = visits;
+                                // alert(previousValue)
+                            }
+
+
+                            chart.data = data;
+
+                            var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+                            dateAxis.renderer.grid.template.location = 0;
+                            dateAxis.renderer.axisFills.template.disabled = true;
+                            dateAxis.renderer.ticks.template.disabled = true;
+
+                            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                            valueAxis.tooltip.disabled = true;
+                            valueAxis.renderer.minWidth = 35;
+                            valueAxis.renderer.axisFills.template.disabled = true;
+                            valueAxis.renderer.ticks.template.disabled = true;
+
+                            var series = chart.series.push(new am4charts.LineSeries());
+                            series.dataFields.dateX = "date";
+                            series.dataFields.valueY = "value";
+                            series.strokeWidth = 2;
+                            series.tooltipText = "value: {valueY}, day change: {valueY.previousChange}";
+
+                            // set stroke property field
+                            series.propertyFields.stroke = "color";
+
+                            chart.cursor = new am4charts.XYCursor();
+
+                            var scrollbarX = new am4core.Scrollbar();
+                            chart.scrollbarX = scrollbarX;
+
+                            dateAxis.start = 0.7;
+                            dateAxis.keepSelection = true;
+
+
+                        }); // end am4core.ready()
+                        </script>
+                        <!-- HTML -->
+                        <div id="chartdiv"></div>
+                        <div class="card-body">
+                            <h4 class="card-title"> Sales Performance</h4>
+                            <p class="card-category">
+                                <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">access_time</i> updated 4 minutes ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-chart">
+                        <!-- Styles -->
+                        <style>
+                            #chartdiv13 {
+                                            width: 100%;
+                                            height: 500px;
+                                            }
+                                        </style>
+                        <!-- Resources -->
+                        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+                        <!-- Chart code -->
+                        <script>
+                            am4core.ready(function() {
+
+                            // Themes begin
+                            am4core.useTheme(am4themes_animated);
+                            // Themes end
+
+                            // Create chart instance
+                            var chart = am4core.create("chartdiv13", am4charts.XYChart);
+                            chart.scrollbarX = new am4core.Scrollbar();
+
+                            // Add data
+                            // graphvalue=[]
+                            datasaledetail = {{ salesmonthtable | tojson }};
+
+                            chart.data = datasaledetail
+
+
+                            // Create axes
+                            var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+                            categoryAxis.dataFields.category = "country";
+                            categoryAxis.renderer.grid.template.location = 0;
+                            categoryAxis.renderer.minGridDistance = 12;
+                            categoryAxis.renderer.labels.template.horizontalCenter = "right";
+                            categoryAxis.renderer.labels.template.verticalCenter = "middle";
+                            categoryAxis.renderer.labels.template.rotation = 270;
+                            categoryAxis.tooltip.disabled = true;
+                            categoryAxis.renderer.minHeight = 110;
+
+                            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                            valueAxis.renderer.minWidth = 50;
+
+                            // Create series
+                            var series = chart.series.push(new am4charts.ColumnSeries());
+                            series.sequencedInterpolation = true;
+                            series.dataFields.valueY = "visits";
+                            series.dataFields.categoryX = "country";
+                            series.tooltipText = "[{categoryX}: bold]{valueY}[/]";
+                            series.columns.template.strokeWidth = 0;
+
+                            series.tooltip.pointerOrientation = "vertical";
+
+                            series.columns.template.column.cornerRadiusTopLeft = 10;
+                            series.columns.template.column.cornerRadiusTopRight = 10;
+                            series.columns.template.column.fillOpacity = 0.8;
+
+                            // on hover, make corner radiuses bigger
+                            var hoverState = series.columns.template.column.states.create("hover");
+                            hoverState.properties.cornerRadiusTopLeft = 0;
+                            hoverState.properties.cornerRadiusTopRight = 0;
+                            hoverState.properties.fillOpacity = 1;
+
+                            series.columns.template.adapter.add("fill", function(fill, target) {
+                                return chart.colors.getIndex(target.dataItem.index);
+                            });
+
+                            // Cursor
+                            chart.cursor = new am4charts.XYCursor();
+
+                        }); // end am4core.ready()
+                        </script>
+                        <!-- HTML -->
+                        <div id="chartdiv13"></div>
+                        <div class="card-body">
+                            <h4 class="card-title">Monthly sales</h4>
+                            <p class="card-category">Monthly Performance</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">access_time</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-chart">
+                        <style>
+                            #chartdivS{
+  width: 100%;
+  height: 500px;
+}
+
+</style>
+                        <!-- Resources -->
+                        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+                        <!-- Chart code -->
+                        <script>
+                            am4core.ready(function() {
+
+                            // Themes begin
+                            am4core.useTheme(am4themes_animated);
+                            // Themes end
+
+                            var chart = am4core.create("chartdivS", am4charts.XYChart);
+                            chart.padding(40, 40, 40, 40);
+
+                            var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+                            categoryAxis.renderer.grid.template.location = 0;
+                            categoryAxis.dataFields.category = "network";
+                            categoryAxis.renderer.minGridDistance = 1;
+                            categoryAxis.renderer.inversed = true;
+                            categoryAxis.renderer.grid.template.disabled = true;
+
+                            var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
+                            valueAxis.min = 0;
+
+                            var series = chart.series.push(new am4charts.ColumnSeries());
+                            series.dataFields.categoryY = "network";
+                            series.dataFields.valueX = "MAU";
+                            series.tooltipText = "{valueX.value}"
+                            series.columns.template.strokeOpacity = 0;
+                            series.columns.template.column.cornerRadiusBottomRight = 5;
+                            series.columns.template.column.cornerRadiusTopRight = 5;
+
+                            var labelBullet = series.bullets.push(new am4charts.LabelBullet())
+                            labelBullet.label.horizontalCenter = "left";
+                            labelBullet.label.dx = 10;
+                            labelBullet.label.text = "{values.valueX.workingValue.formatNumber('#.0as')}";
+                            labelBullet.locationX = 1;
+
+                            // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
+                            series.columns.template.adapter.add("fill", function(fill, target) {
+                                return chart.colors.getIndex(target.dataItem.index);
+                            });
+
+                            categoryAxis.sortBySeries = series;
+
+                            datacusdetail = {{ custore | tojson }};
+                            chart.data = datacusdetail
+
+                        });
+                        </script>
+                        <!-- HTML -->
+                        <div id="chartdivS"></div>
+                        <div class="card-body">
+                            <h4 class="card-title"> CUSTOMER PERFORMANCE</h4>
+                        
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">access_time</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-chart">
+                        <!-- Styles -->
+                        <style>
+                            #chartdivin {
+  width: 100%;
+  height: 500px;
+}
+
+</style>
+                        <!-- Resources -->
+                        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+                        <!-- Chart code -->
+                        <script>
+                            am4core.ready(function() {
+
+                            // Themes begin
+                            am4core.useTheme(am4themes_material);
+                            am4core.useTheme(am4themes_animated);
+                            // Themes end
+
+                            // Create chart instance
+                            var chart = am4core.create("chartdivin", am4charts.XYChart3D);
+
+                            // Add data
+                            datasaledetail = {{ cmpstore | tojson }};
+                            chart.data = datasaledetail
+
+
+
+                            // Create axes
+                            let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+                            categoryAxis.dataFields.category = "country";
+                            categoryAxis.renderer.labels.template.rotation = 270;
+                            categoryAxis.renderer.labels.template.hideOversized = false;
+                            categoryAxis.renderer.minGridDistance = 20;
+                            categoryAxis.renderer.labels.template.horizontalCenter = "right";
+                            categoryAxis.renderer.labels.template.verticalCenter = "middle";
+                            categoryAxis.tooltip.label.rotation = 270;
+                            categoryAxis.tooltip.label.horizontalCenter = "right";
+                            categoryAxis.tooltip.label.verticalCenter = "middle";
+
+                            let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                            valueAxis.title.text = "CUSTOMERS";
+                            valueAxis.title.fontWeight = "bold";
+
+                            // Create series
+                            var series = chart.series.push(new am4charts.ColumnSeries3D());
+                            series.name
+                            series.dataFields.valueY = "visits";
+                            series.dataFields.categoryX = "country";
+                            series.name = "Visits";
+                            series.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+                            series.columns.template.fillOpacity = .8;
+
+                            var columnTemplate = series.columns.template;
+                            columnTemplate.strokeWidth = 2;
+                            columnTemplate.strokeOpacity = 1;
+                            columnTemplate.stroke = am4core.color("#FFFFFF");
+
+                            columnTemplate.adapter.add("fill", function(fill, target) {
+                                return chart.colors.getIndex(target.dataItem.index);
+                            })
+
+                            columnTemplate.adapter.add("stroke", function(stroke, target) {
+                                return chart.colors.getIndex(target.dataItem.index);
+                            })
+
+                            chart.cursor = new am4charts.XYCursor();
+                            chart.cursor.lineX.strokeOpacity = 0;
+                            chart.cursor.lineY.strokeOpacity = 0;
+
+                        }); // end am4core.ready()
+                        </script>
+                        <!-- HTML -->
+                        <div id="chartdivin"></div>
+                        <div class="card-body">
+                            <h4 class="card-title">INACTIVE CUSTOMERS</h4>
+                            <p class="card-category">Monthly Performance</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">access_time</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-chart">
+                        <style>
+                            #chartdiv4 {
+  width: 100%;
+  height: 500px;
+}
+
+</style>
+                        <!-- Resources -->
+                        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+                        <!-- Chart code -->
+                        <script>
+                            am4core.ready(function() {
+
+                        // Themes begin
+                        am4core.useTheme(am4themes_animated);
+                        // Themes end
+
+                        var chart = am4core.create("chartdiv4", am4charts.XYChart);
+                        chart.padding(40, 40, 40, 40);
+
+                        var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+                        categoryAxis.renderer.grid.template.location = 0;
+                        categoryAxis.dataFields.category = "network";
+                        categoryAxis.renderer.minGridDistance = 1;
+                        categoryAxis.renderer.inversed = true;
+                        categoryAxis.renderer.grid.template.disabled = true;
+
+                        var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
+                        valueAxis.min = 0;
+
+                        var series = chart.series.push(new am4charts.ColumnSeries());
+                        series.dataFields.categoryY = "network";
+                        series.dataFields.valueX = "MAU";
+                        series.tooltipText = "{valueX.value}"
+                        series.columns.template.strokeOpacity = 0;
+                        series.columns.template.column.cornerRadiusBottomRight = 5;
+                        series.columns.template.column.cornerRadiusTopRight = 5;
+
+                        var labelBullet = series.bullets.push(new am4charts.LabelBullet())
+                        labelBullet.label.horizontalCenter = "left";
+                        labelBullet.label.dx = 10;
+                        labelBullet.label.text = "{values.valueX.workingValue.formatNumber('#.0as')}";
+                        labelBullet.locationX = 1;
+
+                        // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
+                        series.columns.template.adapter.add("fill", function(fill, target) {
+                            return chart.colors.getIndex(target.dataItem.index);
+                        });
+
+                        categoryAxis.sortBySeries = series;
+
+                        datasaledetail = {{ itemstore | tojson }};
+                        chart.data = datasaledetail
+
+
+
+                    }); // end am4core.ready()
+                    </script>
+                        <!-- HTML -->
+                        <div id="chartdiv4"></div>
+                        <div class="card-body">
+                            <h4 class="card-title"> ITEM WISE SALES</h4>
+                            <p class="card-category">Monthly Performance</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">access_time</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-chart">
+                        <!-- Styles -->
+                        <style>
+                            #chartdiviT{
+  width: 100%;
+  height: 500px;
+}
+
+</style>
+                        <!-- Resources -->
+                        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+                        <!-- Chart code -->
+                        <script>
+                            am4core.ready(function() {
+
+                        // Themes begin
+                        am4core.useTheme(am4themes_material);
+                        am4core.useTheme(am4themes_animated);
+                        // Themes end
+
+                        // Create chart instance
+                        var chart = am4core.create("chartdiviT", am4charts.XYChart3D);
+
+                        // Add data
+                        datacusdetail = {{ matstore | tojson }};
+                        chart.data = datacusdetail
+
+
+
+                        // Create axes
+                        let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+                        categoryAxis.dataFields.category = "country";
+                        categoryAxis.renderer.labels.template.rotation = 270;
+                        categoryAxis.renderer.labels.template.hideOversized = false;
+                        categoryAxis.renderer.minGridDistance = 20;
+                        categoryAxis.renderer.labels.template.horizontalCenter = "right";
+                        categoryAxis.renderer.labels.template.verticalCenter = "middle";
+                        categoryAxis.tooltip.label.rotation = 270;
+                        categoryAxis.tooltip.label.horizontalCenter = "right";
+                        categoryAxis.tooltip.label.verticalCenter = "middle";
+
+                        let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                        valueAxis.title.text = "CUSTOMERS";
+                        valueAxis.title.fontWeight = "bold";
+
+                        // Create series
+                        var series = chart.series.push(new am4charts.ColumnSeries3D());
+                        series.dataFields.valueY = "visits";
+                        series.dataFields.categoryX = "country";
+                        series.name = "Visits";
+                        series.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+                        series.columns.template.fillOpacity = .8;
+
+                        var columnTemplate = series.columns.template;
+                        columnTemplate.strokeWidth = 2;
+                        columnTemplate.strokeOpacity = 1;
+                        columnTemplate.stroke = am4core.color("#FFFFFF");
+
+                        columnTemplate.adapter.add("fill", function(fill, target) {
+                            return chart.colors.getIndex(target.dataItem.index);
+                        })
+
+                        columnTemplate.adapter.add("stroke", function(stroke, target) {
+                            return chart.colors.getIndex(target.dataItem.index);
+                        })
+
+                        chart.cursor = new am4charts.XYCursor();
+                        chart.cursor.lineX.strokeOpacity = 0;
+                        chart.cursor.lineY.strokeOpacity = 0;
+
+                    }); // end am4core.ready()
+                    </script>
+                        <!-- HTML -->
+                        <div id="chartdiviT"></div>
+                        <div class="card-body">
+                            <h4 class="card-title">INACTIVE ITEM</h4>
+                            <p class="card-category">Monthly Performance</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">access_time</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-chart">
+                        <!-- Styles -->
+                        <style>
+                            #chartdivr {
+  width: 100%;
+  height: 500px;
+}
+
+</style>
+                        <!-- Resources -->
+                        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+                        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+                        <!-- Chart code -->
+                        <script>
+                            am4core.ready(function() {
+
+                        // Themes begin
+                        am4core.useTheme(am4themes_animated);
+                        // Themes end
+
+                        // Create chart instance
+                        var chart = am4core.create("chartdivr", am4charts.XYChart3D);
+                        chart.paddingBottom = 30;
+                        chart.angle = 35;
+
+                        // Add data
+                        datacusdetail = {{ matrestore | tojson }};
+                        chart.data = datacusdetail
+
+
+                        // Create axes
+                        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+                        categoryAxis.dataFields.category = "country";
+                        categoryAxis.renderer.grid.template.location = 0;
+                        categoryAxis.renderer.minGridDistance = 20;
+                        categoryAxis.renderer.inside = true;
+                        categoryAxis.renderer.grid.template.disabled = true;
+
+                        let labelTemplate = categoryAxis.renderer.labels.template;
+                        labelTemplate.rotation = -90;
+                        labelTemplate.horizontalCenter = "left";
+                        labelTemplate.verticalCenter = "middle";
+                        labelTemplate.dy = 10; // moves it a bit down;
+                        labelTemplate.inside = false; // this is done to avoid settings which are not suitable when label is rotated
+
+                        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                        valueAxis.renderer.grid.template.disabled = true;
+
+                        // Create series
+                        var series = chart.series.push(new am4charts.ConeSeries());
+                        series.dataFields.valueY = "visits";
+                        series.dataFields.categoryX = "country";
+
+                        var columnTemplate = series.columns.template;
+                        columnTemplate.adapter.add("fill", function(fill, target) {
+                            return chart.colors.getIndex(target.dataItem.index);
+                        })
+
+                        columnTemplate.adapter.add("stroke", function(stroke, target) {
+                            return chart.colors.getIndex(target.dataItem.index);
+                        })
+
+                    }); // end am4core.ready()
+                    </script>
+                        <!-- HTML -->
+                        <div id="chartdivr"></div>
+                        <div class="card-body">
+                            <h4 class="card-title">Reorder Level</h4>
+                            <p class="card-category"></p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-warning">
+                            <h4 class="card-title">Payment Detail</h4>
+                            <p class="card-category">Payment as on 29-05-2020</p>
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <th>Due date</th>
+                                    <th>Name</th>
+                                    <th>balance</th>
+                                    <th>paid</th>
+                                </thead>
+                                <tbody>
+                                    <!-- <h1>{{detail}}</h1> -->
+                                    {% for i in detail %}
+                                    <tr>
+                                        <td>{{detail[i]['date']}}</td>
+                                        <td>{{detail[i]['company_name']}}</td>
+                                        <td>{{detail[i]['balance']}}</td>
+                                        <td>{{detail[i]['paid']}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-warning">
+                            <h4 class="card-title">Re-order level</h4>
+                            <p class="card-category"></p>
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <th>company name</th>
+                                    <th>invoice no</th>
+                                    <th>amount</th>
+                                </thead>
+                                <tbody>
+                                    <!-- <h1>{{salesdetail}}</h1> -->
+                                    {% for i in salesdetail %}
+                                    <tr>
+                                        <td>{{i['companyname']}}</td>
+                                        <td>{{i.invoice_no}}</td>
+                                        <td>{{i.grand_total}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="/static/inventory/assets/js/main.js"></script>
+    <script src="/static/inventory/assets/js/lib/chosen/chosen.jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+        jQuery(".standardSelect").chosen({
+            disable_search_threshold: 10,
+            no_results_text: "Oops, nothing found!",
+            width: "100%"
+        });
+    });
+</script>
+    <center><button type="submit" class="btn btn-primary btn-sm">
+            <i class="fa fa-dot-circle-o"></i> ADD
+        </button></center>
+    </div>
+    <form>
+</body>
+
+</html>

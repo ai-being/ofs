@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CUSTOMER ADD</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/inventory/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/static/inventory/assets/css/style.css">
+    <link rel="stylesheet" href="/static/inventory/assets/css/lib/chosen/chosen.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="/static/inventory/cities.js"></script>
+</head>
+
+<body>
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa   fa-users"></i>CUSTOMER</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/customer_add">CUSTOMER ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/customer_view">CUSTOMER EDIT</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>VENDOR</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon  ti-plus"></i><a href="/inventory/vendor_add">VENDOR ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/vendor_view">VENDOR EDIT</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>PRODUCTS</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/product_add">PRODUCT ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/product_view">PRODUCT EDIT</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>PURCHASE</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/purchase_add">PURCHASE ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/purchase_view">PURCHASE EDIT</a></li>
+                        </ul>
+                    </li>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>REPORTS</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/stock_report">STOCK REPORT</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/item_report">ITEM REPORT</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/customer_sales_report">CUSTOMER REPORT</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/inventory/bill_add"><i class="menu-icon fa fa-file-text-o"></i>BILLING </a>
+                        <a href="/inventory/bill_view"><i class="menu-icon fa fa-file-text-o"></i>BILLING EDIT</a>
+                    </li>
+                    <li>
+                        <a href="/inventory/product_stock"><i class="menu-icon fa fa-check-square-o"></i>PRODUCT STOCK </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/inventory/purchase_payment"><i class="menu-icon fa fa-check-square-o"></i>PURCHASE PAYMENT</a>
+                    </li>
+                    <li>
+                        <a href="/inventory/payment_add"><i class="menu-icon fa fa-check-square-o"></i>BILL PAYMENT</a>
+                    </li>
+                    <li>
+                        <a href="/inventory/bank"><i class="menu-icon fa fa-check-square-o"></i>BANK DETAILS </a>
+                    </li>
+                    <li>
+                        <a href="/inventory/companydetail"><i class="menu-icon fa fa-check-square-o"></i>COMPANY DETAILS</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <!-- <a class="navbar-brand" href="./"><img src="https://i.ibb.co/C8r9qLj/SARASWATHI-ELECTRICAL.jpg" height="100" width="100" alt="Logo"></a>
+                     -->
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                    </div>
+                </div>
+            </div>
+        </header><!-- /header -->
+        <!-- Header-->
+        <form action="/inventory/bill_add" method="POST">
+            <div class="content">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-3">
+                            <label>INVOICE NUMBER:</label>
+                            <input type="text" class="form-control" name="invoice_no" value="{{billno}}"></div>
+                        <div class="col-3">
+                            <label for="billd">BILL DATE:</label>
+                            <input type="date" id="date" name="billdate" value={{today}} class="form-control">
+                        </div>
+                            <div class="col-3">
+                                <label for="dued">DUE DATE:</label>
+                                <input type="date" id="date" name="duedate" value={{today}} class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                        <div class="form-group col-9">
+                            <label for="vendorname" style="font-size: 20px;" class="form-control-label">SELECT CUSTOMER</label>
+                            <!-- ===============================================customer type ============================ -->
+                            <select id="customer_type" name="customer_type" class="form-control" onclick="hide_name_box(this.value)" style="font-size: 20px;">
+                                <option selected="" value="customer">customer</option>
+                                <option value="walk-in">walk-in</option>
+                            </select>
+                        </div>
+                        <!-- ===============================================customer  ============================ -->
+                        <div class="form-group col-9">
+                            <label for="customern" class="form-control-label">ENTER CUSTOMER NAME</label>
+                            <select id="customer" name="customer" class="form-control" onclick="customer_data();">
+                                {% for i in customer_list %}
+                                <option value="{{i.id}}">{{i.companyname}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="customername" name="customer" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="address" class=" form-control-label">BILLING ADDRESS</label>
+                                    <textarea id="address" name="address" class="form-control"></textarea>
+                                </div>
+                                <div class="col-4">
+                                    <label for="shipaddress" class=" form-control-label">SHIPPING ADDRESS</label>
+                                    <textarea type="text" id="shipaddress" name="shipaddress" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>GSTIN</label>
+                                <input type="text" id="gst" name="gst" class="form-control" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>STATE</label>
+                                <input type="text" id="state" name="state" class="form-control" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>CITY</label>
+                                <input type="text" id="city" name="city" class="form-control" value="">
+                            </div>
+                        </div>
+                        <!-- ==================================================== javascript customer related================== -->
+                        <script type="text/javascript">
+                        function hide_name_box(value) {
+
+                            if (value == 'walk-in') {
+
+                                document.getElementById('customer').style.display = 'none';
+                                document.getElementById('customer').setAttribute("name", "name")
+                                document.getElementById('customername').style.display = '';
+                                document.getElementById('customername').setAttribute("name", "customername")
+                                document.getElementById('address').value = ""
+                                document.getElementById('shipaddress').value = ""
+
+
+
+                            } else
+
+                            {
+                                document.getElementById('customer').style.display = '';
+                                document.getElementById('customer').setAttribute("name", "customername")
+                                document.getElementById('customername').style.display = 'none';
+                                document.getElementById('customername').setAttribute("name", "name")
+                            }
+
+                        }
+
+                        function customer_data() {
+                            id = document.getElementById("customer").value;
+
+                            let customerdata = {{ customer_list | tojson }};
+
+                            for (let data = 0; data < customerdata.length; data++) {
+                                if (customerdata[data]["id"] == id) {
+                                    address = customerdata[data]["address"];
+                                    gst = customerdata[data]["gst"];
+                                    phone = customerdata[data]["phone"];
+                                    email = customerdata[data]["email"];
+                                    state = customerdata[data]["state"];
+                                    city = customerdata[data]["city"];
+                                    town = customerdata[data]["town"];
+
+                                    document.getElementById("state").value = state;
+                                    document.getElementById("city").value = city;
+                                    document.getElementById('gst').value = gst;
+                                    document.getElementById('address').value = address + 'GST:' + gst + 'state:' + state + 'city:' + city + 'town:' + town + 'Phone:' + phone + 'EMAIL:' + email;
+                                    document.getElementById('shipaddress').value = address + 'GST:' + gst + 'state:' + state + 'city:' + city + 'town:' + town + 'Phone:' + phone + 'EMAIL:' + email;
+                                }
+                            }
+
+                        }
+                        </script>
+                        <!-- =========================================== javascript  -->
+                        <div class="table-stats order-table ov-h">
+                            <div id="POItablediv">
+                                <input type="button" onclick="addRow('dataTable')" id="addPOIbutton" value="ADD ITEM" /><br /><br />
+                                <table id="POITable" class="table" border="1">
+                                    <thead></thead>
+                                    <tr>
+                                        <td>S.NO:</td>
+                                        <td>productcode</td>
+                                        <td>PRODUCT NAME</td>
+                                        <td>QUANTITY</td>
+                                        <td>UNIT</td>
+                                        <td>MRP</td>
+                                        <td>DISCOUNT</td>
+                                        <td>AFTER DISCOUNT</td>
+                                        <td>BEFORE GST</td>
+                                        <td>GST</td>
+                                        <td>AMOUNT</td>
+                                        <td>DELETE</td>
+                                    </tr>
+                                    <tbody id="dataTable">
+                                        <tr>
+                                            <td><input class="table_elements" type="text" id="sno_0" name="sno_0" value="1" size="1" /></td>
+                                            <td><input size=10 type="text" name="productcode_0" id="productcode_0" onkeyup="product_data(this.id)" /></td>
+                                            <td><select id="name_0" name="name_0" style="font-size: 20px;" onclick="product_data(this.id);" onkeyup="product_data(this.id);">
+                                                    {% for i in product_list%}
+                                                    <option selected="" value="{{i.id}}">{{i.product_name}}</option>
+                                                    {% endfor %}
+                                                </select></td>
+                                            <td><input size=5 type="text" name="quantity_0" id="qty_0" onkeyup="data(this.id);calculation(this.id)" /></td>
+                                            <td><select id="unit_0" name="unit_0">
+                                                    <option value="None">none</option>
+                                                    {% for i in unit %}
+                                                    <option value="{{i.unit}}">{{i.unit}}</option>
+                                                    {% endfor %}
+                                                </select></td>
+                            </div>
+                            <td><input size=5 type="text" name="value_0" id="value_0" onkeyup="calculation(this.id)" /></td>
+                            <td><input size=5 type="text" name="dis_0" id="dis_0" value="0" onkeyup="calculation(this.id)" /></td>
+                            <td><input size=5 type="text" name="afterdis_0" id="afterdis_0" /></td>
+                            <td><input size=5 type="text" name="prevalue_0" id="prevalue_0" /></td>
+                            <td><input size=5 type="text" name="gst_0" id="gst_0" /></td>
+                            <td><input size=10 type="text" name="amount_0" id="amount_0" /></td>
+                            <td><input type="button" id="delPOIbutton" value="Delete" onclick="deleteRow(this);total_();" /></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table align="right">
+                            <tbody>
+                                <!-- ========================================================# TOTAL VALUE #======================== -->
+                                <tr>
+                                    <td>TOTAL:</td>
+                                    <td><input size=25 type="text" name="total" id="total" /></td>
+                                </tr>
+                                <tr>
+                                    <td>CGST:</td>
+                                    <td><input size=25 type="text" name="cgst" id="cgst" /></td>
+                                </tr>
+                                <tr>
+                                    <td>SGST:</td>
+                                    <td><input size=25 type="text" name="sgst" id="sgst" /></td>
+                                </tr>
+                                <tr>
+                                    <td>IGST:</td>
+                                    <td><input size=25 type="text" name="igst" id="igst" /></td>
+                                </tr>
+                                <tr>
+                                    <td>ROUND OFF:</td>
+                                    <td><input size=25 type="text" name="roundoff" id="roundoff" /></td>
+                                </tr>
+                                <tr>
+                                    <td>GRAND TOTAL:</td>
+                                    <td><input size=25 type="text" name="grandtot" id="grandtot" /></td>
+                                </tr>
+                                <tr>
+                                    <td>PAID:</td>
+                                    <td><input size=25 type="text" name="paid" id="paid" value=0 onkeyup="payment();" /></td>
+                                </tr>
+                                <tr>
+                                    <td>BALANCE:</td>
+                                    <td><input size=25 type="text" name="balance" id="balance" readonly="" /></td>
+                                </tr>
+                                <!-- ================================================================================================= -->
+                            </tbody>
+                            </table>
+                            <!-- ========================================================= item script ===================== -->
+                            <script type="text/javascript">
+                            function product_data(value) {
+                                index = value.split("_")[1]
+
+                                value_name = value.split("_")[0]
+
+
+
+
+
+                                let productdata = {{ product_list | tojson }};
+
+
+
+                                for (let data = 0; data < productdata.length; data++) {
+
+                                    if (value_name == 'productcode') {
+
+                                        id = document.getElementById('productcode_' + index).value;
+                                        data_check = productdata[data]["product_code"];
+
+                                    } else {
+
+                                        id = document.getElementById('name_' + index).value;
+                                        data_check = productdata[data]["id"];
+
+                                    }
+
+                                    if (data_check == id) {
+                                        name = productdata[data]["product_name"];
+                                        product_code = productdata[data]["product_code"];
+
+                                        cus_type = document.getElementById("customer_type").value;
+
+                                        if (cus_type == 'walk-in') {
+                                            gst = 0
+                                        } else {
+                                            gst = productdata[data]["gst"];
+                                        }
+
+                                        sale = productdata[data]["sales_price"];
+                                        product_id = productdata[data]["id"];
+                                        stock = productdata[data]["stock"];
+                                        stock_alert = productdata[data]["stock_alert"];
+                                        unit = productdata[data]["unit"];
+
+                                        // document.getElementById().value=mrp;
+                                        document.getElementById('productcode_' + index).value = product_code;
+                                        document.getElementById('name_' + index).value = product_id;
+                                        document.getElementById('qty_' + index).value = 1
+                                        document.getElementById('value_' + index).value = sale;
+                                        document.getElementById('prevalue_' + index).value = sale;
+                                        document.getElementById('afterdis_' + index).value = sale;
+                                        document.getElementById('gst_' + index).value = gst;
+                                        document.getElementById('unit_' + index).value = unit;
+
+                                        let after_gst = ((sale * gst) / 100)
+
+                                        let total = parseFloat(sale) + parseFloat(after_gst)
+                                        document.getElementById("amount_" + index).value = total.toFixed(2);
+
+                                        if (stock_alert == 'yes') {
+                                            if (1 > stock) {
+                                                alert('THE MAXIMUM STOCK: ' + stock)
+                                            }
+                                        }
+
+                                        break;
+
+                                    } else {
+                                        document.getElementById('qty_' + index).value = 0
+                                        document.getElementById('value_' + index).value = 0;
+                                        document.getElementById('prevalue_' + index).value = 0;
+                                        document.getElementById('gst_' + index).value = 0;
+                                    }
+                                }
+                                total_();
+
+                            }
+
+                            function data(value) {
+                                index = value.split("_")[1]
+
+                                value_name = value.split("_")[0]
+
+
+
+
+
+                                let productdata = {{ product_list | tojson }};
+
+
+
+                                for (let data = 0; data < productdata.length; data++) {
+
+                                    if (value_name == 'productcode') {
+
+                                        id = document.getElementById('productcode_' + index).value;
+                                        data_check = productdata[data]["product_code"];
+
+                                    } else {
+
+                                        id = document.getElementById('name_' + index).value;
+                                        data_check = productdata[data]["id"];
+
+                                    }
+
+                                    if (data_check == id) {
+                                        name = productdata[data]["product_name"];
+                                        product_code = productdata[data]["product_code"];
+
+                                        cus_type = document.getElementById("customer_type").value;
+
+
+                                        sale = productdata[data]["sales_price"];
+                                        product_id = productdata[data]["id"];
+                                        stock = productdata[data]["stock"];
+                                        stock_alert = productdata[data]["stock_alert"];
+                                    }
+                                }
+                            }
+
+                            function calculation(value) {
+                                {
+                                    index = value.split("_")[1];
+
+                                    qty = document.getElementById('qty_' + index).value;
+
+
+
+                                    if (stock_alert == 'yes') {
+                                        if (qty > stock)
+
+                                        {
+                                            alert('THE MAXIMUM STOCK: ' + stock)
+                                        }
+                                    }
+
+                                    price = document.getElementById('value_' + index).value;
+                                    discount = document.getElementById('dis_' + index).value;
+
+
+                                    discount = parseFloat(price) - ((parseFloat(price) * parseFloat(discount)) / 100);
+
+                                    document.getElementById('afterdis_' + index).value = discount.toFixed(2);
+
+                                    sale = qty * discount;
+
+                                    document.getElementById("prevalue_" + index).value = sale.toFixed(2);
+
+                                    document.getElementById('gst_' + index).value = gst;
+
+                                    let after_gst = ((sale * gst) / 100)
+
+                                    let total = parseFloat(sale) + parseFloat(after_gst);
+                                    document.getElementById("amount_" + index).value = total.toFixed(2);
+                                }
+                                total_();
+
+                            }
+
+                            function total_() {
+
+                                rowcount = document.getElementById("rowcount").value
+                                let prevalue_amt = 0
+                                let amount_amt = 0
+                                for (let i = 0; rowcount > 0; i++) {
+
+                                    try {
+                                        prevalue = document.getElementById('prevalue_' + i).value;
+                                        amount_value = document.getElementById("amount_" + i).value;
+
+                                        prevalue_amt = parseFloat(prevalue_amt) + parseFloat(prevalue);
+                                        amount_amt = parseFloat(amount_amt) + parseFloat(amount_value);
+
+                                        document.getElementById("total").value = prevalue_amt.toFixed(2);
+
+                                        rowcount--
+                                    } catch (e) {
+                                        i;
+                                    }
+                                }
+
+                                totvalue = amount_amt - prevalue_amt;
+                                gstvale = totvalue / 2;
+
+
+                                if (cus_type == 'walk-in') {
+                                    document.getElementById('cgst').value = 0;
+                                    document.getElementById('sgst').value = 0;
+                                    document.getElementById('igst').value = 0;
+                                } else {
+                                    try {
+                                        if (state == "Tamil Nadu") {
+                                            document.getElementById('cgst').value = gstvale.toFixed(2);
+                                            document.getElementById('sgst').value = gstvale.toFixed(2);
+                                            document.getElementById('igst').value = 0;
+                                        } else {
+                                            document.getElementById('cgst').value = 0;
+                                            document.getElementById('sgst').value = 0;
+                                            document.getElementById('igst').value = totvalue.toFixed(2);
+                                        }
+                                    } catch {
+                                        alert('select customer name first:')
+                                    }
+                                }
+                                final()
+
+                            }
+
+                            function final() {
+                                pre_total = document.getElementById('total').value;
+                                tot_cgst = document.getElementById('cgst').value;
+                                tot_sgst = document.getElementById('sgst').value;
+                                tot_igst = document.getElementById('igst').value;
+                                // grand_total=document.getElementById('').value;
+                                pregrandtotal = parseFloat(pre_total) + parseFloat(tot_cgst) + parseFloat(tot_sgst) + parseFloat(tot_igst)
+
+                                var grandtotal = Math.round(pregrandtotal);
+                                round = grandtotal - pregrandtotal
+
+                                document.getElementById("roundoff").value = round.toFixed(2)
+                                document.getElementById("grandtot").value = grandtotal
+
+                                payment();
+                            }
+
+                            function payment() {
+                                grandtotal = document.getElementById('grandtot').value
+                                paid = document.getElementById('paid').value
+
+                                balance = parseFloat(grandtotal) - parseFloat(paid)
+
+                                document.getElementById('balance').value = balance.toFixed(2)
+                            }
+                            </script>
+                            <!-- ========================================================= row script ======================= -->
+                            <input type="hidden" id="rowcount" name="rowcount" value="1" size="10" />
+                            <script type="text/javascript">
+                            var item_id = 0;
+
+                            function addRow(dataTable) {
+
+                                item_id++;
+
+                                var table = document.getElementById(dataTable);
+
+                                var rowCount = table.rows.length;
+                                // alert(rowcount)
+                                var row = table.insertRow(rowCount);
+                                document.getElementById("rowcount").value = parseInt(item_id + 1);
+                                // row.id = item_id .toString();
+                                // item_id ++;
+
+                                var colCount = table.rows[0].cells.length;
+
+                                console.log("Column count: " + colCount);
+
+                                for (var i = 0; i < colCount; i++) {
+
+                                    var newcell = row.insertCell(i);
+                                    if (i > 18) {
+                                        newcell.style.visibility = "hidden";
+                                    }
+
+
+                                    newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+                                    console.log(newcell.childNodes);
+                                    //alert(newcell.childNodes);
+                                    switch (newcell.childNodes[0].type) {
+                                        case "text":
+                                            newcell.childNodes[0].value = "";
+                                            newcell.childNodes[0].id = newcell.childNodes[0].id.split("_")[0] + "_" + item_id;
+                                            newcell.childNodes[0].name = newcell.childNodes[0].name.split("_")[0] + "_" + item_id;
+                                            newcell.childNodes[0].value = 0;
+                                            break;
+                                        case "hidden":
+                                            newcell.childNodes[0].value = "";
+                                            newcell.childNodes[0].id = newcell.childNodes[0].id.split("_")[0] + "_" + item_id;
+                                            newcell.childNodes[0].name = newcell.childNodes[0].name.split("_")[0] + "_" + item_id;
+                                            newcell.childNodes[0].value = 0;
+                                            break;
+                                        case "checkbox":
+                                            newcell.childNodes[0].checked = false;
+                                            newcell.childNodes[0].id = newcell.childNodes[0].id.split("_")[0] + "_" + item_id;
+                                            newcell.childNodes[0].name = newcell.childNodes[0].name.split("_")[0] + "_" + item_id;
+                                            break;
+                                        case "select-one":
+                                            newcell.childNodes[0].selectedIndex = 0;
+                                            newcell.childNodes[0].id = newcell.childNodes[0].id.split("_")[0] + "_" + item_id;
+                                            newcell.childNodes[0].name = newcell.childNodes[0].name.split("_")[0] + "_" + item_id;
+                                            break;
+                                        case "button":
+                                            newcell.childNodes[0].selectedIndex = 0;
+                                            newcell.childNodes[0].id = newcell.childNodes[0].id.split("_")[0] + "_" + item_id;
+                                            newcell.childNodes[0].name = newcell.childNodes[0].name.split("_")[0] + "_" + item_id;
+                                            break;
+                                    }
+                                }
+
+                                reset_rows();
+                            }
+
+                            function deleteRow(row) {
+                                try {
+
+                                    var table = document.getElementById('dataTable');
+                                    var rowCount = table.rows.length;
+                                    // alert(rowCount)
+
+                                    if (rowCount <= 1) {
+                                        alert("cant delete first row")
+                                    } else {
+
+                                        var del = row.parentNode.parentNode;
+                                        var del1 = del.parentNode.removeChild(del);
+                                    }
+
+
+                                    reset_rows();
+
+                                } catch (e) {
+                                    alert(e);
+                                }
+                            }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="/static/inventory/assets/js/main.js"></script>
+    <script src="/static/inventory/assets/js/lib/chosen/chosen.jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+        jQuery(".standardSelect").chosen({
+            disable_search_threshold: 10,
+            no_results_text: "Oops, nothing found!",
+            width: "100%"
+        });
+    });
+    </script>
+    <center><button type="submit" class="btn btn-primary btn-sm">
+            <i class="fa fa-dot-circle-o"></i> GENERATE BILL
+        </button></center>
+    </div>
+    </form>
+</body>
+
+</html>

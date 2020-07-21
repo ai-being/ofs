@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BILLIING </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ela Admin - HTML5 Admin Template</title>
+    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/lib/chosen/chosen.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="cities.js"></script>
+</head>
+
+<body>
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa   fa-users"></i>CUSTOMER</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="customeradd.html">CUSTOMER ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="customeredit.html">CUSTOMER EDIT</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>VENDOR</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon  ti-plus"></i><a href="vendoradd.html">VENDOR ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="vendoredit.html">VENDOR EDIT</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>PRODUCTS</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="productadd.html">PRODUCT ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="productedit.html">PRODUCT EDIT</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="billing.html"><i class="menu-icon fa fa-file-text-o"></i>BILLING </a>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="menu-icon fa fa-check-square-o"></i>INVENTORY </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./"><img src="images/" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="images/" alt="Logo"></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                    </div>
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                        </a>
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
+                            <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
+                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header><!-- /header -->
+        <!-- Header-->
+        <div class="content">
+            <div class="row">
+                <div class="col">
+                    <div class="card-body card-block">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <label>INVOICE NUMBER:</label>
+                                    <input type="text" name=""></div>
+                                <div class="col">
+                                    <label for="billd">BILL DATE:</label>
+                                    <input type="date" id="billd " name=""></div>
+                                <div class="col">
+                                    <label for="dued">DUE DATE:</label>
+                                    <input type="date" id="dued " name=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="vendorname" style="font-size: 20px;" class="form-control-label">SELECT CUSTOMER</label>
+                        <select id="vendorname" style="font-size: 20px;" data-placeholder="Choose Vendor..." class="standardSelect" tabindex="1">
+                            <option value="" label="default" style="font-size: 20px;"></option>
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Aland Islands">Aland Islands</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Anguilla">Anguilla</option>
+                            <option value="Antarctica">Antarctica</option>
+                        </select>
+                        <span>OR</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="customern" class=" form-control-label">ENTER CUSTOMER NAME</label>
+                        <input type="text" id="customern" name="" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="customern" class=" form-control-label">BILLING ADDRESS</label>
+                                <textarea id="customern" name="" class="form-control"></textarea>
+                            </div>
+                            <div class="col-4">
+                                <label for="customern" class=" form-control-label">SHIPPING ADDRESS</label>
+                                <textarea type="text" id="customern" name="" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-stats order-table ov-h">
+                        <div id="POItablediv">
+                            <input type="button" onclick="insRow()" id="addPOIbutton" value="ADD ITEM" /><br /><br />
+                            <table id="POITable" class="table" border="1">
+                                <thead></thead>
+                                <tr>
+                                    <td>S.NO:</td>
+                                    <td>PRODUCT NAME</td>
+                                    <td>MRP</td>
+                                    <td>QUANTITY</td>
+                                    <td>VALUE</td>
+                                    <td>DELETE</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input size=25 type="text" id="latbox" /></td>
+                                    <td><input size=25 type="text" id="lngbox" /></td>
+                                    <td><input size=25 type="text" id="latbox" /></td>
+                                    <td><input size=25 type="text" id="lngbox" /></td>
+
+                                    <td><input type="button" id="delPOIbutton" value="Delete" onclick="deleteRow(this)" /></td>
+                                </tr>
+                            </table>
+                            <script type="text/javascript">
+                            function deleteRow(row) {
+                                var i = row.parentNode.parentNode.rowIndex;
+                                if (i > 1) {
+                                    document.getElementById('POITable').deleteRow(i);
+                                }
+
+                            }
+
+
+                            function insRow() {
+
+                                var x = document.getElementById('POITable');
+                                var new_row = x.rows[1].cloneNode(true);
+                                var len = x.rows.length;
+                                new_row.cells[0].innerHTML = len;
+
+                                var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
+                                inp1.id += len;
+                                inp1.value = '';
+                                var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
+                                inp2.id += len;
+                                inp2.value = '';
+                                x.appendChild(new_row);
+                            }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/lib/chosen/chosen.jquery.min.js"></script>
+    <script>
+    jQuery(document).ready(function() {
+        jQuery(".standardSelect").chosen({
+            disable_search_threshold: 10,
+            no_results_text: "Oops, nothing found!",
+            width: "100%"
+        });
+    });
+    </script>
+    <center><button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> GENERATE BILL
+                </button></center>
+    </div>
+</body>
+
+</html>
