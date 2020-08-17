@@ -40,7 +40,7 @@ today=date.today()
 def render_login():
 
 	if rights() != None:
-			return redirect(url_for("inventory.dashboard"))
+			return render_template("inventory/dashboard.html")
 	else:
 		return render_template("inventory/login.html")
 
@@ -2442,18 +2442,11 @@ def dashboard():
 
             
             salesmonthtable.append({'country':monthloop,'visits':grandtotal})
-        salesmonthtables=[]
-        count=0
-        for i in salesmonthtable:
-        	if count<=20:
-        		salesmonthtables.append({'country':i['country'],'visits':i['visits']})
-        		count+=1
-        salesmonthtable=salesmonthtables
             # count1+=1/
         # print(salesmonthtable)
 
         #---------------------------------------------------------------------------------------------item sales graph-------------------------
-        cursor.execute("SELECT * from product limit 20 ")
+        cursor.execute("SELECT * from product ")
         item_list=cursor.fetchall()
 
         itemstore=[]
@@ -2471,7 +2464,7 @@ def dashboard():
         item_list=cursor.fetchall()
 
     #---------------------------------------------------------------------------------------------in active customer graph-------------------------
-        cursor.execute("SELECT * from customer limit 20")
+        cursor.execute("SELECT * from customer ")
         cmp_list=cursor.fetchall()
 
         cmpstore=[]
@@ -2485,7 +2478,7 @@ def dashboard():
         # print(cmpstore)
 
         #---------------------------------------------------------------------------------------------customer sales graph-------------------------
-        cursor.execute("SELECT * from customer limit 20")
+        cursor.execute("SELECT * from customer")
         cus_list=cursor.fetchall()
 
         custore=[]
@@ -2514,13 +2507,8 @@ def dashboard():
             
             matstore.append({'country':'Date: '+str(matvalue['MAX(date)'])+'\nItem name: '+i['product_name'],'visits':matvalue['pretotal']})
         # print(matstore)
-        matstores=[]
-        count=0
-        for i in matstore:
-        	if count<=20:
-        		matstores.append({"country":i['country'],"visits":i['visits']})
-        		count+=1
-        matstore=matstores
+
+
         #-----------------------------------------------------------------------------------------reorderlevel-------------------------------#
         cursor.execute("SELECT * from product ")
         matre_list=cursor.fetchall()
@@ -2531,13 +2519,7 @@ def dashboard():
             if 10>=i['stock']:
                 matrestore.append({"country":i['product_name'],"visits":i['stock']})
 
-        matrestores=[]
-        count=0
-        for i in matrestore:
-        	if count<=20:
-        		matrestores.append({"country":i['country'],'visits':i['visits']})
-        		count+=1
-        matrestore=matrestores
+        
 
         #-----------------------------------------------------------------------------------------payment pending details---------------------#
         cursor.execute("SELECT *,customer.companyname as company_name,customer.id as cusid,bill.due_date as b_duedate from customer,bill where customer.id=bill.companyname")

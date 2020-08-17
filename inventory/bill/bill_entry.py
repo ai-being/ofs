@@ -19,7 +19,7 @@ def bill_insert(today,id):
         customer_type=request.form['customer_type']
         address=request.form['address']
         shipaddress=request.form['shipaddress']
-        gst=request.form['gst']
+        gst='null'
         total=request.form['total']
         cgst=request.form['cgst']
         sgst=request.form['sgst']
@@ -53,7 +53,10 @@ def bill_insert(today,id):
         #==============================================#
 
         if customer_type!='customer':
-            invoice_no=0
+            cursor.execute("INSERT into customer value(null,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(today,customername,customername,"null","null",address,state,city,"null","null",'0'))
+            connection.commit()
+            customername=cursor.lastrowid
+            customer_type='customer'
         # print((invoice_no))
         # print((billdate))
         # print((due_date))
@@ -84,6 +87,9 @@ def bill_insert(today,id):
             # ==========================================================================================================================================================================================================================
 
             if customer_type == 'customer':
+
+                customer_id=id
+
                 cursor.execute("SELECT * from bill,payment_details where payment_details.type='bill' and payment_details.invoice_no=bill.invoice_no and payment_details.company_name=bill.companyname and bill.id =%s",(id))
                 bill_amount=cursor.fetchone()
 

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CUSTOMER ADD</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/inventory/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/static/inventory/assets/css/style.css">
+    <link rel="stylesheet" href="/static/inventory/assets/css/lib/chosen/chosen.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="/static/inventory/cities.js"></script>
+</head>
+<style type="text/css">
+    html,input{
+        text-transform: uppercase;
+    }
+</style>
+<body>
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa   fa-users"></i>CUSTOMER</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/customer_add">CUSTOMER ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/customer_view">CUSTOMER EDIT</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>VENDOR</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon  ti-plus"></i><a href="/inventory/vendor_add">VENDOR ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/vendor_view">VENDOR EDIT</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>PRODUCTS</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/product_add">PRODUCT ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/product_view">PRODUCT EDIT</a></li>
+                        </ul>
+                    </li> <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>PURCHASE</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/purchase_add">PURCHASE ADDITION</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/purchase_view">PURCHASE EDIT</a></li>
+                        </ul>
+                    </li>
+                    </li> <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>REPORTS</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon ti-plus"></i><a href="/inventory/stock_report">STOCK REPORT</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/item_report">ITEM REPORT</a></li><li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/customer_sales_report">CUSTOMER REPORT</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/inventory/bill_add"><i class="menu-icon fa fa-file-text-o"></i>BILLING </a>
+                        <a href="/inventory/bill_view"><i class="menu-icon fa fa-file-text-o"></i>BILLING EDIT</a>
+
+                    </li>
+                    <li>
+                        <a href="/inventory/product_stock"><i class="menu-icon fa fa-check-square-o"></i>PRODUCT STOCK </a>
+                    </li>
+                   
+                    <li>
+                        <a href="/inventory/purchase_payment"><i class="menu-icon fa fa-check-square-o"></i>PURCHASE PAYMENT</a>
+                    </li>
+                     <li>
+                        <a href="/inventory/payment_add"><i class="menu-icon fa fa-check-square-o"></i>BILL PAYMENT</a>
+                    </li>
+                    <li>
+                        <a href="/inventory/bank"><i class="menu-icon fa fa-check-square-o"></i>BANK DETAILS </a>
+                    </li>
+                    <li>
+                        <a href="/inventory/companydetail"><i class="menu-icon fa fa-check-square-o"></i>COMPANY DETAILS</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </aside>
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <!-- <a class="navbar-brand" href="./"><img src="https://i.ibb.co/C8r9qLj/SARASWATHI-ELECTRICAL.jpg" height="100" width="100" alt="Logo"></a>
+                     -->
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                    </div>
+                    
+                </div>
+            </div>
+        </header><!-- /header -->
+        <!-- Header-->
+
+
+
+<div class="content">
+            <div class="row">
+                <div class="col">
+    
+    {% if id != 0 %}
+    <form method="POST" action="/inventory/purchase_saveedit/{{detail_head.id}}" onsubmit="return validateForm()">
+
+    <div class="container-fluid">
+        <div class="row" style="margin-top: 80px;">
+        </div>
+        <div class="row row-cols-3">
+            <div class="col-3" style="margin-top: 50px;">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Bill NO:</span>
+                    </div>
+                    <!-- <label for="bill_no">Bill No:</label> -->
+                    <input class="form-control" type="text" id="bill_no" name="bill_no" value="{{detail_head.bill_no}}">
+                </div>
+            </div>
+            <div class="col-3" style="margin-top: 50px;">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">L.R No:</span>
+                    </div>
+                    <input class="form-control" type="text" id="lr_no" name="lr_no" value="{{detail_head.lr_no}}">
+                </div>
+            </div>
+            <div class="col-3" style="margin-top: 50px">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">A.C Date:</span>
+                    </div>
+                    <input class="form-control" type="date" id="ac_date" name="ac_date" value="{{detail_head.ac}}">
+                </div>
+            </div>
+            <div class="col-3" style="margin-top: 50px;">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Bill Date:</span>
+                    </div>
+                    <input class="form-control" type="date" id="bill_date" name="bill_date"  value="{{detail_head.date}}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3" style="margin-top: 20px;">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">L.R Date:</span>
+                    </div>
+                    <input class="form-control" type="date" name="lr_date" id="lr_date" value="{{detail_head.lr_date}}">
+                </div>
+            </div>
+            <div class="col-3" style="margin-top: 20px;">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Transport Name:</span>
+                    </div>
+                    <input class="form-control" type="text" name="transport_name" id="transport_name" value="{{detail_head.transport_name}}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <!-- <h1>{{suppiler_venname}}</h1> -->
+                <label for="buyer_name">Supplier Name:</label>
+                <select class="form-control form-control-xs selectpicker"  name="vendorname" data-size="7" data-live-search="true" data-title="Supplier" id="vendorname" data-width="100%"  >
+                   <!--  {% for i in suppiler_cusname %}
+                    <option value="{{i.company_name}}">{{i.company_name}}</option>
+
+                    {% endfor %} -->
+
+                    {% for i in suppiler_venname %}
+                    {% if detail_head.suppiler_name == i.customername %}
+                        <option selected="" value="{{i.customername}}">{{i.customername}}</option>
+                    {% else %}
+                        <option value="{{i.customername}}">{{i.customername}}</option>
+                    {% endif %}
+                    {% endfor %}
+
+            </div>
+        </div>
+        <script type="text/javascript">
+
+        </script>
+    </div>
+    <div class="container-fluid" >
+        <div class="right">
+            <input type="button" value="Add" class="top-buffer" onclick="addRow('data')" />
+        </div>
+        <table  class="data-table-highlight data-table " style="text-align: left;" >
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Rate</th>
+                    <th>Value</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            {% set sno = namespace(value=1) %}
+            {% set count = namespace(value=0) %}
+
+            
+            <tbody  id="data" style="text-align: center;">
+                {% for m in detail_body %}
+                <tr>
+                    <td><input class="table_elements" type="text" id="sno_{{ count.value }}" name="sno_{{ count.value }}" value="1" size="1" /></td>
+                    <td ><select   name="productname_{{ count.value }}"  id="productname_{{ count.value }}" class="form-control" onkeyup="calculation(this.id);" onclick="calculation(this.id);" >
+                        {% for i in material %}
+                            {% if i.id | string == m.item | string %}
+                                <option selected="" value="{{i.id}}">{{i.product_name}}</option>
+                            {% else %}
+                                <option value="{{i.id}}">{{i.product_name}}</option>
+                            {% endif %}
+                         {% endfor %}   
+                        </select></td>
+                    <td ><input class="form-control" type="text" name="quantity_{{ count.value }}" id="quantity_{{ count.value }}" value="{{m.qty}}" onkeyup="calculation(this.id);tot(this.id);tot_1();gnd_tot();fullgndtot();"></td>
+                    <td ><select   name="unit_{{ count.value }}"  id="unit_{{ count.value }}" class="form-control">
+                        {% for i in unit %}
+                            {% if i.unit | string == m.unit | string %}
+                                <option selected="" value="{{i.unit}}">{{i.unit}}</option>
+                            {% else %}
+                                <option value="{{i.unit}}">{{i.unit}}</option>
+                            {% endif %}
+                        {% endfor %}
+                        </select></td>
+                    
+                    <td ><input class="form-control" type="text" name="rate_{{ count.value }}" id="rate_{{ count.value }}" value="{{m.rate}}" onkeyup="tot(this.id);tot_1();gnd_tot();fullgndtot();"></td>
+                    <td ><input class="form-control" type="text" name="value_{{ count.value }}" id="value_{{ count.value }}" value="{{m.value}}" onkeyup="tot_1();gnd_tot();" onchange="tot_1();gnd_tot();" readonly="" ></td>
+                    <td  style="display: none;" ><input class="form-control" type="hidden" name="gst_{{ count.value }}" id="gst_{{ count.value }}" value={{m.gst}} readonly="" ></td>
+                    <td><button onclick="deleteRow(this);tot_1();gnd_tot();" />DEL</button></td>
+                </tr>
+                {% set count.value=count.value+1 %}
+            {% set sno.value=sno.value+1 %}
+            {% endfor %}
+
+            </tbody>
+            </table>
+
+        
+
+        <div class="container">
+            <div class="row">
+                <div class="col-4" style="margin-top: 200px;">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Narration</span>
+                        </div>
+                            <textarea class="form-control" aria-label="With textarea" name="Narrations" id="Narrations" >{{detail_head.naration}}</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="margin-left: 300px">
+                    <div class="table-bordered" style="overflow-x: hidden;overflow-y: hidden;width: 40%;margin-left:380px;height:auto">
+                        <table class=" table table-bordered" style="overflow-y: hidden;overflow-x: auto;">
+                            <tbody style="min-height:300px;overflow-x:hidden;overflow-y:hidden">
+                                <tr>
+                                    <th style="font-size:14px;width: 100px">TOTAL</th>
+                                    <td ><input class="form-control" type="text" name="total" id="total" value={{detail_head.total}} onkeyup="gndtot();fullgndtot();"></td>
+                                </tr>
+
+                                <tr id="tcgst">
+                                    <th style="font-size:14px;width: 100px">CGST</th>
+                                    <td ><input class="form-control" type="text" name="cgst" id="cgst" value={{detail_head.cgst}} onkeyup="gnd_tot();fullgndtot();"></td>
+                                </tr>
+                                <tr id="tsgst">
+                                    <th style="font-size:14px;width: 100px">SGST</th>
+                                    <td ><input class="form-control" type="text" name="sgst" id="sgst" value={{detail_head.sgst}} onkeyup="gnd_tot();fullgndtot();"></td>
+                                </tr>
+                                <tr id="tigst">
+                                    <th style="font-size:14px;width: 100px">IGST</th>
+                                    <td ><input class="form-control" type="text" name="igst" id="igst" value={{detail_head.igst}} onkeyup="gnd_tot();fullgndtot();"></td>
+                                </tr>
+                                <tr>
+                                    <th style="font-size:14px;width: 100px">INSURANCE EXP</th>
+                                    <td ><input class="form-control" type="text" name="INSURANCE" id="INSURANCE" value={{detail_head.insurance}} onkeyup=" insur();gnd_tot();fullgndtot();"></td>
+                                </tr>
+                                <tr>
+                                    <th style="font-size:14px;width: 100px">CGST 9%</th>
+                                    <td ><input class="form-control" type="text" name="inucgst" id="inucgst" value={{detail_head.in_cgst}} onkeyup="gnd_tot();fullgndtot();"></td>
+                                </tr>
+                                <tr>
+                                    <th style="font-size:14px;width: 100px">SGST 9%</th>
+                                    <td ><input class="form-control" type="text" name="inusgst" id="inusgst" value={{detail_head.in_sgst}} onkeyup="gnd_tot();fullgndtot();"></td>
+                                </tr>
+                                <tr>
+                                    <th style="font-size:14px;width: 100px">ROUNDED OFF</th>
+                                    <td ><input class="form-control" type="text" name="roundoff" id="roundoff" value={{detail_head.roundoff}} onkeyup="fullgnd_tot();"></td>
+                                </tr>
+                                <tr>
+                                    <th style="font-size:14px;width: 100px">GRAND TOTAL</th>
+                                    <td ><input class="form-control" type="text" name="gndtot" id="gndtot" value={{detail_head.grand_total}}  ></td>
+                                </tr>
+                                <tr>
+                                    <td>PAID:</td>
+                                    <td><input size=25 type="text" name="paid" id="paid" value={{detail_head.paid_amount}} onkeyup="payment();" /></td>
+                                </tr>
+                                <tr>
+                                    <td>BALANCE:</td>
+                                    <td><input size=25 type="text" name="balance" id="balance" value="{{detail_head.balance_amount}}" readonly="" /></td>
+                                </tr>
+                                <input type="hidden" id="rowcount" name="rowcount" value="{{count.value}}"  size="10"/>
+                                <!-- <input type="hidden" id="id" name="id" value="{{id}}"  size="10"/> -->
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <center><input type="submit" name="button" value="save" class="btn btn-danger"></center>
+            </div>
+        </form>
+
+        <script type="text/javascript">
+var item_id={{count.value}}
+item_id=item_id-1
+
+// alert(item_id)
+function addRow(tableID) {
+    
+    item_id++
+    
+    var table = document.getElementById(tableID);
+    
+    var rowCount = table.rows.length;
+    // alert(rowCount)
+    document.getElementById("rowcount").value=parseInt(item_id+1);
+    var row = table.insertRow(rowCount);
+
+    var colCount = table.rows[0].cells.length;
+    
+
+    for (var i = 0; i < colCount; i++) {
+    
+        var newcell = row.insertCell(i);
+        if(i==6)
+                    {
+                        newcell.style.display = "none";
+                        newcell.style.visibility = "hidden";
+                    }
+
+        newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+        // alert(newcell.childNodes[0].type)
+        switch(newcell.childNodes[0].type) {
+                    case "text":
+                            newcell.childNodes[0].value = "";
+                            newcell.childNodes[0].id = newcell.childNodes[0].id.split("_")[0] + "_" + item_id;
+                            newcell.childNodes[0].name = newcell.childNodes[0].name.split("_")[0] + "_" + item_id;
+                            newcell.childNodes[0].value = 0;
+                            break;
+                    case "hidden":
+                            newcell.childNodes[0].value = "";
+                            newcell.childNodes[0].id = newcell.childNodes[0].id.split("_")[0] + "_" + item_id;
+                            newcell.childNodes[0].name = newcell.childNodes[0].name.split("_")[0] + "_" + item_id;
+                            newcell.childNodes[0].value = 0;
+                            break;
+                    case "checkbox":
+                            newcell.childNodes[0].checked = false;
+                            newcell.childNodes[0].id = newcell.childNodes[0].id.split("_")[0] + "_" + item_id;
+                            newcell.childNodes[0].name = newcell.childNodes[0].name.split("_")[0] + "_" + item_id;
+                            break;
+                    case "select-one":
+                            // alert('pass')
+                            newcell.childNodes[0].selectedIndex = 0;
+                            newcell.childNodes[0].id = newcell.childNodes[0].id.split("_")[0] + "_" + item_id;
+                            newcell.childNodes[0].name = newcell.childNodes[0].name.split("_")[0] + "_" + item_id;
+                            break;
+                    case "button":
+                            newcell.childNodes[0].selectedIndex = 0;
+                            newcell.childNodes[0].id = newcell.childNodes[0].id.split("_")[0] + "_" + item_id;
+                            newcell.childNodes[0].name = newcell.childNodes[0].name.split("_")[0] + "_" + item_id;
+                            break;
+                    
+
+    }
+}
+reset_rows();
+}
+
+
+function deleteRow(row) 
+{
+            try {
+
+            var table = document.getElementById('data');
+            var rowCount = table.rows.length;
+            if (rowCount <= 1)
+            {
+                alert("cant delete first row")
+            }
+            else
+            {
+
+                var del=row.parentNode.parentNode;
+                var del1=del.parentNode.removeChild(del);
+            }
+
+            }
+            catch(e) {
+                alert(e);
+            }
+        }
+        </script>
+
+        <script type="text/javascript">
+            function calculation(id)
+            {
+                vn=document.getElementById('vendorname').value
+                // alert('item_ids')
+                if (vn == "")
+                {
+                    alert('select the vendor')
+                }
+                else
+                {
+                    let index = id.split("_")[1];
+                    item_ids=document.getElementById('productname_'+index).value
+                    
+                    // document.getElementById("sno_"+index).value=parseInt(index)+1;
+                    let details_data = {{material | tojson}};
+                    for(let data=0; data<details_data.length; data++)
+                            {
+                                if(details_data[data]["id"] == item_ids)
+                                {
+                                    unit=details_data[data]["unit"]
+                                    rate=parseFloat(details_data[data]["purchase_price"])
+                                    gst=parseInt(details_data[data]["gst"])
+                                    // gstrate=((rate*gst)/100)
+                                    // alert(gstrate)
+
+                                    document.getElementById("unit_"+index).value=unit;
+                                    document.getElementById("rate_"+index).value=rate;
+                                    
+                                    
+                                    // alert(unit)
+
+                                    break;
+                                }
+                            }
+                }
+            }
+           
+            function tot(id)
+            {   
+                // alert('pass')
+                let index = id.split("_")[1];
+                value=document.getElementById("rate_"+index).value;
+                qty=document.getElementById("quantity_"+index).value;
+                amount=value*qty
+                document.getElementById("value_"+index).value=amount;
+                gstrate=((amount*gst)/100)
+                document.getElementById("gst_"+index).value=gstrate;
+               // alert(gstrate)
+                
+            }
+            
+
+            function tot_1()
+            {
+                count=document.getElementById("rowcount").value
+                // alert('pass')
+                let totals=0;
+                let totgst=0;
+                // alert(rowcount)
+                for (let i =0; i<=count; i++) 
+                {
+                    try{
+
+                        totals=totals+parseFloat(document.getElementById("value_"+i).value);
+                        // alert(parseFloat(document.getElementById("gst_"+i).value))
+                        totgst=totgst+parseFloat(document.getElementById("gst_"+i).value);
+                        
+                    }
+                    catch(e)
+                    {
+                        i;
+                    }
+                    
+                }
+
+                
+                document.getElementById("total").value=totals.toFixed(2);
+                
+                item_ids=document.getElementById('vendorname').value
+                // alert(item_ids)
+                if (item_ids == "")
+                {
+                    alert('select the vendor')
+                }
+                else
+                {
+                    let details_data = {{suppiler_venname | tojson}};
+                    for(let data=0; data<details_data.length; data++)
+                            {
+                                if(details_data[data]["customername"] == item_ids)
+                                {
+                                    // alert('pass')
+                                    gsttype=details_data[data]["state"]
+                                    
+                                    break;
+                                }
+                                
+                            }
+                    
+
+                    if (gsttype == 'Tamil Nadu')
+                    {
+
+                        document.getElementById("cgst").value=(totgst/2) ;
+                        document.getElementById("sgst").value=(totgst/2) ;
+                        document.getElementById('tcgst').style.display='';
+                        document.getElementById('tsgst').style.display='';
+                        document.getElementById('tigst').style.display='none';
+                    }
+                    else
+                    {   
+                        document.getElementById('tcgst').style.display='none';
+                        document.getElementById('tsgst').style.display='none';
+                        document.getElementById('tigst').style.display='';
+                        document.getElementById("igst").value=(totgst) ;
+                    }
+                    
+                   // alert('out')
+                    }
+                    insur();
+            }
+             
+            function insur()
+            {   
+                // alert('insur')
+                insurance=parseInt(document.getElementById("INSURANCE").value)
+                insugst=((insurance*9)/100)
+                document.getElementById("inucgst").value=insugst/2
+                document.getElementById("inusgst").value=insugst/2
+
+            }
+            
+        </script>
+                                <script type="text/javascript">
+                                    function gnd_tot()
+                                    {
+                                        insurance=parseFloat(document.getElementById("INSURANCE").value)
+                                        total=parseFloat(document.getElementById("total").value)
+                                        cgst=parseFloat(document.getElementById("cgst").value)
+                                        sgst=parseFloat(document.getElementById("sgst").value)
+                                        igst=parseFloat(document.getElementById("igst").value)
+                                        totgst=cgst+sgst+igst
+
+                                        
+                                        iicgst=parseFloat(document.getElementById("inucgst").value)
+                                        iisgst=parseFloat(document.getElementById("inusgst").value)
+
+                                        insugst=iicgst+iisgst
+                                        
+
+                                        gnd=total+totgst+insurance+insugst
+                                        round=Math.round(gnd);
+                                        roundoff=(round-gnd).toFixed(2)
+
+                                        // alert(insurance)
+                                        // alert(total)
+                                        // alert(cgst)
+                                        // alert(sgst)
+                                        // alert(igst)
+                                        // alert(totgst)
+                                        // alert(iicgst)
+                                        // alert(iicgst)
+                                        // alert(iicgst)
+                                        // alert(gnd)
+                                        // alert(round)
+                                        // alert(roundoff)
+                                        
+                                        document.getElementById("roundoff").value=roundoff
+                                        fullgndtot();
+                                    }
+                                    function fullgndtot()
+                                    {   
+                                        // alert('okkk')
+                                       let fininsurance=parseFloat(document.getElementById("INSURANCE").value)
+                                        let fintotal=parseFloat(document.getElementById("total").value)
+                                        let fincgst=parseFloat(document.getElementById("cgst").value)
+                                        let finsgst=parseFloat(document.getElementById("sgst").value)
+                                        let finigst=parseFloat(document.getElementById("igst").value)
+                                        let finroundoff=parseFloat(document.getElementById("roundoff").value)
+                                        
+                                        let fintotgst=fincgst+finsgst+finigst
+                                        
+                                        
+                                        let finiicgst=parseFloat(document.getElementById("inucgst").value)
+                                        let finiisgst=parseFloat(document.getElementById("inusgst").value)
+                                        let fininsugst=finiicgst+finiisgst
+                                        
+                                        
+                                        let gndss=fintotal
+                                        gndss= fintotal + fintotgst + fininsurance + fininsugst + finroundoff
+                                        gndss = gndss.toFixed(2);
+                                        document.getElementById("gndtot").value=gndss
+                                        
+                                        payment();
+                                    }
+                                    function payment()
+                                    {   
+
+                                        grandtotal=document.getElementById('gndtot').value
+                                        
+                                        paid=document.getElementById('paid').value
+
+                                        balance=parseFloat(grandtotal)-parseFloat(paid)
+
+                                        document.getElementById('balance').value=balance.toFixed(2)
+                                    }
+                        
+                                </script>
+
+        {% endif %}
+
+
+
+
+         
+    </div>
+</body>
+
+<script type="text/javascript">
+    
+    function validateForm()
+    {
+        if(document.getElementById('vendorname').value=="")
+        {   
+            alert('Enter Vendor Name:')
+            return false
+        }
+        else if(document.getElementById('gndtot').value==0)
+        {   
+            alert("Add Atleast one product:")
+            return false
+        }
+        else
+        {
+            return true
+        }
+    }
+</script>

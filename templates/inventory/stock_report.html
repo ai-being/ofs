@@ -2,14 +2,12 @@
 <html>
 
 <head>
-        <title>STOCK REPORT</title>
+    <title>STOCK REPORT</title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="https://i.ibb.co/C8r9qLj/SARASWATHI-ELECTRICAL.jpg">
-    <link rel="shortcut icon" href="https://i.ibb.co/C8r9qLj/SARASWATHI-ELECTRICAL.jpg">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
@@ -21,69 +19,36 @@
     <link rel="stylesheet" href="/static/inventory/assets/css/lib/chosen/chosen.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-    
-   <script src=" https://code.jquery.com/jquery-3.5.1.js"></script>
-   <link rel="stylesheet" type="text/css" href="   https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css
-">
-   <link rel="stylesheet" type="text/css" href="   https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css
-">
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha256-bqVeqGdJ7h/lYPq6xrPv/YGzMEb6dNxlfiTUHSgRCp8=" crossorigin="anonymous"></script>
+    <script src=" https://code.jquery.com/jquery-3.5.1.js"></script>
+    <Script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></Script>
+    <Script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></Script>
+    <Script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></Script>
+    <Script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></Script>
+    <Script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></Script>
+    <Script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></Script>
+    <Script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></Script>
+    <Script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></Script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href=" https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha256-bqVeqGdJ7h/lYPq6xrPv/YGzMEb6dNxlfiTUHSgRCp8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha256-siyOpF/pBWUPgIcQi17TLBkjvNgNQArcmwJB8YvkAgg=" crossorigin="anonymous" />
-
 </head>
 <style type="text/css">
-    html{
-        text-transform: uppercase;
-    }
+html {
+    text-transform: uppercase;
+}
 </style>
-
 <style type="text/css">
 body {
     margin: 2em;
 }
 </style>
-<script type="text/javascript">
-$(document).ready(function() {
-    $.fn.dataTable.ext.search.push(
-        function(settings, data, dataIndex) {
-            var min = $('#min').datepicker("getDate");
-            var max = $('#max').datepicker("getDate");
-            var startDate = new Date(data[0]);
-            // alert(startDate)
-            if (min == null && max == null) { return true; }
-            if (min == null && startDate <= max) { return true; }
-            if (max == null && startDate >= min) { return true; }
-            if (startDate <= max && startDate >= min) { return true; }
-            return false;
-        }
-    );
-
-
-    $("#min").datepicker({ onSelect: function() { table.draw(); }, changeMonth: true, changeYear: true });
-    $("#max").datepicker({ onSelect: function() { table.draw(); }, changeMonth: true, changeYear: true });
-    var table = $('#example').DataTable();
-
-    // Event listener to the two range filtering inputs to redraw on input
-    $('#min, #max').change(function() {
-        table.draw();
-    });
-     table.destroy();
-});
-</script>
-
 </head>
 
 <body>
-         <aside id="left-panel" class="left-panel">
+    <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -110,34 +75,34 @@ $(document).ready(function() {
                             <li><i class="menu-icon ti-plus"></i><a href="/inventory/product_add">PRODUCT ADDITION</a></li>
                             <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/product_view">PRODUCT EDIT</a></li>
                         </ul>
-                    </li> <li class="menu-item-has-children dropdown">
+                    </li>
+                    <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>PURCHASE</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon ti-plus"></i><a href="/inventory/purchase_add">PURCHASE ADDITION</a></li>
                             <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/purchase_view">PURCHASE EDIT</a></li>
                         </ul>
                     </li>
-                    </li> <li class="menu-item-has-children dropdown">
+                    </li>
+                    <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus-square-o"></i>REPORTS</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon ti-plus"></i><a href="/inventory/stock_report">STOCK REPORT</a></li>
-                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/item_report">ITEM REPORT</a></li><li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/customer_sales_report">CUSTOMER REPORT</a></li>
-
-        s                </ul>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/item_report">ITEM REPORT</a></li>
+                            <li><i class="menu-icon ti-marker-alt"></i><a href="/inventory/customer_sales_report">CUSTOMER REPORT</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="/inventory/bill_add"><i class="menu-icon fa fa-file-text-o"></i>BILLING </a>
                         <a href="/inventory/bill_view"><i class="menu-icon fa fa-file-text-o"></i>BILLING EDIT</a>
-
                     </li>
                     <li>
                         <a href="/inventory/product_stock"><i class="menu-icon fa fa-check-square-o"></i>PRODUCT STOCK </a>
                     </li>
-                   
                     <li>
                         <a href="/inventory/purchase_payment"><i class="menu-icon fa fa-check-square-o"></i>PURCHASE PAYMENT</a>
                     </li>
-                     <li>
+                    <li>
                         <a href="/inventory/payment_add"><i class="menu-icon fa fa-check-square-o"></i>BILL PAYMENT</a>
                     </li>
                     <li>
@@ -146,7 +111,6 @@ $(document).ready(function() {
                     <li>
                         <a href="/inventory/companydetail"><i class="menu-icon fa fa-check-square-o"></i>COMPANY DETAILS</a>
                     </li>
-
                 </ul>
             </div>
         </nav>
@@ -165,7 +129,6 @@ $(document).ready(function() {
                 <div class="header-menu">
                     <div class="header-left">
                     </div>
-                    
                 </div>
             </div>
         </header><!-- /header -->
@@ -175,35 +138,36 @@ $(document).ready(function() {
                 <div class="col">
                     <table border="0" cellspacing="5" cellpadding="5">
                         <tbody>
-                            <tr>
-                                <td>Minimum Date:</td>
-                                <td><input name="min" id="min" type="text" onchange="dates();"></td>
-                            </tr>
-                            <tr>
-                                <td>Maximum Date:</td>
-                                <td><input name="max" id="max" type="text" onchange="dates();"></td>
-                            </tr>
                         </tbody>
                     </table>
-                    <form action="/inventory/stock_report" method="POST"> 
+                    <form action="/inventory/stock_report" method="POST">
                         <div class="form-group">
                             <label for="customern" class=" form-control-label">ENTER ITEM NAME:</label>
-                            <select id="item" name="item" onclick="customer_data();" >
-                                
+                            <select id="item" name="item" onclick="customer_data();">
                                 {% for i in product %}
-                                            <option value="{{i.id}}" >{{i.product_name}}</option>
+                                <option value="{{i.id}}">{{i.product_name}}</option>
                                 {% endfor %}
                             </select>
                         </div>
                         <center><button type="submit" class="btn btn-primary btn-sm">
-                    <i class="fa fa-dot-circle-o"></i> SEARCH
-                </button></center>
+                                <i class="fa fa-dot-circle-o"></i> SEARCH
+                            </button></center>
                     </form>
+                    <table cellspacing="5" cellpadding="5" border="0">
+                        <tbody>
+                            <tr>
+                                <td>Minimum Date:</td>
+                                <td><input type="text" id="min" name="min"></td>
+                            </tr>
+                            <tr>
+                                <td>Maximum Date:</td>
+                                <td><input type="text" id="max" name="max"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                     {% if key == 'fine' %}
                     <div class="DataTable table-striped">
                         <table id="example" class="table table-striped table-bordered" style="width:100%;margin-top: 200px;">
-                        
-
                             <thead>
                                 <tr>
                                     <th>Start date</th>
@@ -215,199 +179,207 @@ $(document).ready(function() {
                                 </tr>
                             </thead>
                             <tbody>
-                                    
-                                    {% set stock = namespace(value=0) %}
-                                    {% set stock_out = namespace(value=0) %}
-                                    {% set stock_in = namespace(value=0) %}
-                                    <tr>
-                                                    
-                                                    <td></td>
-                                                    
-                                                    <td>{{open_stock.product_name}}</td>
-                                                    <td>{{open_stock.product_code}}</td>
-                                                    <td></td>
-                                                    <td>Opening Stock:</td>
-                                                    <td>{{open_stock.opening_stock}}</td>
-                                                    {% set stock.value = (stock.value | int) + (open_stock.opening_stock | int) %}
-                                                    
-                                                    
-                                    </tr>
-                                    {% for i in table %}
-                                        
-                                            {% if i[6] == 'purchase' %}
-                                                <tr>
-                                                    
-                                                    <td>{{ i[0] }}</td>
-                                                    
-                                                    <td>{{i[1]}}</td>
-                                                    <td>{{i[2]}}</td>
-                                                    <td>{{i[3]}}</td>
-                                                    <td>0</td>
-                                                    {% set stock.value = (stock.value | int) + (i[3] | int) %}
-                                                    <td>{{stock.value}}</td>
-                                                    
-                                                    {% set stock_in.value = (stock_in.value | int) + (i[3] | int) %}
-                                                    
-                                                </tr>
-                                            {% else %}
-                                                <tr>
-                                                    
-                                                    <td>{{ i[0] }}</td>
-                                                    
-                                                    <td>{{i[1]}}</td>
-                                                    <td>{{i[2]}}</td>
-                                                    <td>0</td>
-                                                    <td>{{i[3]}}</td>
-                                                    {% set stock.value = (stock.value | int) - (i[3] | int) %}
-                                                    <td>{{stock.value}}</td>
-                                                    {% set stock_out.value = (stock_out.value | int) + (i[3] | int) %}
-                                                    
-
-                                                 </tr>
-                                            {% endif %}
-                                        
-                                        
-                                    {% endfor %}
-                                    <tr>
-                                                    
-                                                    <td></td>
-                                                    
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>{{stock_in.value}}</td>
-                                                    <td>{{stock_out.value}}</td>
-                                                    <td></td>
-                                                    
-                                    </tr>
-                                 
+                                {% set stock = namespace(value=0) %}
+                                {% set stock_out = namespace(value=0) %}
+                                {% set stock_in = namespace(value=0) %}
+                                <tr>
+                                    <td></td>
+                                    <td>{{open_stock.product_name}}</td>
+                                    <td>{{open_stock.product_code}}</td>
+                                    <td></td>
+                                    <td>Opening Stock:</td>
+                                    <td>{{open_stock.opening_stock}}</td>
+                                    {% set stock.value = (stock.value | int) + (open_stock.opening_stock | int) %}
+                                </tr>
+                                {% for i in table %}
+                                {% if i[6] == 'purchase' %}
+                                <tr>
+                                    <td>{{ i[0] }}</td>
+                                    <td>{{i[1]}}</td>
+                                    <td>{{i[2]}}</td>
+                                    <td>{{i[3]}}</td>
+                                    <td>0</td>
+                                    {% set stock.value = (stock.value | int) + (i[3] | int) %}
+                                    <td>{{stock.value}}</td>
+                                    {% set stock_in.value = (stock_in.value | int) + (i[3] | int) %}
+                                </tr>
+                                {% else %}
+                                <tr>
+                                    <td>{{ i[0] }}</td>
+                                    <td>{{i[1]}}</td>
+                                    <td>{{i[2]}}</td>
+                                    <td>0</td>
+                                    <td>{{i[3]}}</td>
+                                    {% set stock.value = (stock.value | int) - (i[3] | int) %}
+                                    <td>{{stock.value}}</td>
+                                    {% set stock_out.value = (stock_out.value | int) + (i[3] | int) %}
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{stock_in.value}}</td>
+                                    <td>{{stock_out.value}}</td>
+                                    <td></td>
+                                </tr>
                             </tbody>
-                       
-                    
                         </table>
-                        <script type="text/javascript">
-        $(document).ready(function() {
-    $('#example').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-} );
-    </script>
+                    <script type="text/javascript">
+                             $(document).ready(function(){
+                               
+        $.fn.dataTable.ext.search.push(
+        function (settings, data, dataIndex) {
+            var min = $('#min').datepicker("getDate");
+            var max = $('#max').datepicker("getDate");
+            var startDate = new Date(data[0]);
+            if (min == null && max == null) { return true; }
+            if (min == null && startDate <= max) { return true;}
+            if(max == null && startDate >= min) {return true;}
+            if (startDate <= max && startDate >= min) { return true; }
+            return false;
+        }
+        );
+
+       
+            $("#min").datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+            $("#max").datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+            var table = $('#example').DataTable({
+                    "dom": 'Bfrtip',
+                    "buttons": [
+    {
+                extend: 'copyHtml5',
+                exportOptions: {
+                    columns: [ 0, ':visible' ]
+                }
+            },
+            {
+                extend: 'excelHtml5',title:"REPORT",
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+          
+             {
+                extend: 'pdfHtml5',title:"REPORT",
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'print',title:" REPORT",
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+
+
+            'colvis','pageLength'                    ]
+                });
+
+
+            // Event listener to the two range filtering inputs to redraw on input
+            $('#min, #max').change(function () {
+                table.draw();
+
+            });
+        });
+                      </script>
                     </div>
-                 <style>
-#chartdiv {
-  width: 100%;
-  height: 500px;
-}
-</style>
+                    <style>
+                    #chartdiv {
+                        width: 100%;
+                        height: 500px;
+                    }
+                    </style>
+                    <!-- Resources -->
+                    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/4/themes/material.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+                    <!-- Chart code -->
+                    <script>
+                    am4core.ready(function() {
 
-<!-- Resources -->
-<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/themes/material.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+                        // Themes begin
+                        am4core.useTheme(am4themes_material);
+                        am4core.useTheme(am4themes_animated);
+                        // Themes end
 
-<!-- Chart code -->
-<script>
-am4core.ready(function() {
+                        var chart = am4core.create("chartdiv", am4charts.XYChart);
 
-// Themes begin
-am4core.useTheme(am4themes_material);
-am4core.useTheme(am4themes_animated);
-// Themes end
+                        chart.data = {{ graphvalue | tojson }};
 
-var chart = am4core.create("chartdiv", am4charts.XYChart);
+                        chart.padding(40, 40, 40, 40);
 
-chart.data = {{graphvalue | tojson }};
+                        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+                        categoryAxis.renderer.grid.template.location = 0;
+                        categoryAxis.dataFields.category = "country";
+                        categoryAxis.renderer.minGridDistance = 60;
+                        categoryAxis.renderer.inversed = true;
+                        categoryAxis.renderer.grid.template.disabled = true;
 
-chart.padding(40, 40, 40, 40);
+                        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                        valueAxis.min = 0;
+                        valueAxis.extraMax = 0.1;
+                        //valueAxis.rangeChangeEasing = am4core.ease.linear;
+                        //valueAxis.rangeChangeDuration = 1500;
 
-var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-categoryAxis.renderer.grid.template.location = 0;
-categoryAxis.dataFields.category = "country";
-categoryAxis.renderer.minGridDistance = 60;
-categoryAxis.renderer.inversed = true;
-categoryAxis.renderer.grid.template.disabled = true;
+                        var series = chart.series.push(new am4charts.ColumnSeries());
+                        series.dataFields.categoryX = "country";
+                        series.dataFields.valueY = "visits";
+                        series.tooltipText = "{valueY.value}"
+                        series.columns.template.strokeOpacity = 0;
+                        series.columns.template.column.cornerRadiusTopRight = 10;
+                        series.columns.template.column.cornerRadiusTopLeft = 10;
+                        //series.interpolationDuration = 1500;
+                        //series.interpolationEasing = am4core.ease.linear;
+                        var labelBullet = series.bullets.push(new am4charts.LabelBullet());
+                        labelBullet.label.verticalCenter = "bottom";
+                        labelBullet.label.dy = -10;
+                        labelBullet.label.text = "{values.valueY.workingValue.formatNumber('#.')}";
 
-var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-valueAxis.min = 0;
-valueAxis.extraMax = 0.1;
-//valueAxis.rangeChangeEasing = am4core.ease.linear;
-//valueAxis.rangeChangeDuration = 1500;
+                        chart.zoomOutButton.disabled = true;
 
-var series = chart.series.push(new am4charts.ColumnSeries());
-series.dataFields.categoryX = "country";
-series.dataFields.valueY = "visits";
-series.tooltipText = "{valueY.value}"
-series.columns.template.strokeOpacity = 0;
-series.columns.template.column.cornerRadiusTopRight = 10;
-series.columns.template.column.cornerRadiusTopLeft = 10;
-//series.interpolationDuration = 1500;
-//series.interpolationEasing = am4core.ease.linear;
-var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-labelBullet.label.verticalCenter = "bottom";
-labelBullet.label.dy = -10;
-labelBullet.label.text = "{values.valueY.workingValue.formatNumber('#.')}";
+                        // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
+                        series.columns.template.adapter.add("fill", function(fill, target) {
+                            return chart.colors.getIndex(target.dataItem.index);
+                        });
 
-chart.zoomOutButton.disabled = true;
+                        setInterval(function() {
+                            am4core.array.each(chart.data, function(item) {
 
-// as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
-series.columns.template.adapter.add("fill", function (fill, target) {
- return chart.colors.getIndex(target.dataItem.index);
-});
+                                item.visits = Math.abs(item.visits);
+                            })
+                            chart.invalidateRawData();
+                        }, 2000)
 
-setInterval(function () {
- am4core.array.each(chart.data, function (item) {
-   
-   item.visits = Math.abs(item.visits);
- })
- chart.invalidateRawData();
-}, 2000)
+                        categoryAxis.sortBySeries = series;
 
-categoryAxis.sortBySeries = series;
-
-}); // end am4core.ready()
-</script>
-
-<!-- HTML -->
-<div id="chartdiv"></div>
+                    }); // end am4core.ready()
+                    </script>
+                    <!-- HTML -->
+                    <div id="chartdiv"></div>
                     <!-- HTML -->
                     <div id="chartdiv"></div>
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
+    <div id="chartdiv"></div>
+    </div>
+    </div>
+    </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/lib/chosen/chosen.jquery.min.js"></script>
-    <script>
-        jQuery(document).ready(function() {
-        jQuery(".standardSelect").chosen({
-            disable_search_threshold: 10,
-            no_results_text: "Oops, nothing found!",
-            width: "100%"
-        });
-    });
-</script>
-{% endif %}
-                    <div id="chartdiv"></div>
-                </div>
-            </div>
-        </div>
+    <script src="/static/inventory/assets/js/main.js"></script>
+    <script src="/static/inventory/assets/js/lib/chosen/chosen.jquery.min.js"></script>
     </div>
- <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-            <script src="/static/inventory/assets/js/main.js"></script>
-            <script src="/static/inventory/assets/js/lib/chosen/chosen.jquery.min.js"></script>
-            
-            
-        </div>
 </body>
 
 </html>

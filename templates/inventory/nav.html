@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-lg bg-info">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="/inventory/dashboard"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/inventory/dashboard" class="nav-link">
+                            DASHBOARD
+                        </a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="javascript:;" class="dropdown-toggle nav-link" data-toggle="dropdown">CUSTOMER</a>
+                        <div class="dropdown-menu">
+                            <a href="/inventory/customer_add" class="dropdown-item">CUSTOMER ADDITION</a>
+                            <a href="/inventory/customer_view" class="dropdown-item">CUSTOMER EDIT</a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="javascript:;" class="dropdown-toggle nav-link" data-toggle="dropdown">VENDOR</a>
+                        <div class="dropdown-menu">
+                            <a href="/inventory/vendor_add" class="dropdown-item">VENDOR ADDITION</a>
+                            <a href="/inventory/vendor_view" class="dropdown-item">VENDOR EDIT</a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="javascript:;" class="dropdown-toggle nav-link" data-toggle="dropdown">PRODUCTS</a>
+                        <div class="dropdown-menu">
+                            <a href="/inventory/product_add" class="dropdown-item">PRODUCT ADDITION</a>
+                            <a href="/inventory/product_view" class="dropdown-item">PRODUCT EDIT</a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="javascript:;" class="dropdown-toggle nav-link" data-toggle="dropdown">REPORTS</a>
+                        <div class="dropdown-menu">
+                            <a href="/inventory/stock_report" class="dropdown-item">STOCK REPORT</a>
+                            <a href="/inventory/item_report" class="dropdown-item">ITEM REPORT</a>
+                            <a href="/inventory/customer_sales_report" class="dropdown-item">CUSTOMER REPORT</a>
+                             <a href="/inventory/product_stock" class="dropdown-item">PRODUCT STOCK </a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="javascript:;" class="dropdown-toggle nav-link" data-toggle="dropdown">BILLING</a>
+                        <div class="dropdown-menu">
+                            <a href="/inventory/bill_add" class="dropdown-item">BILLING </a>
+                            <a href="/inventory/bill_view" class="dropdown-item">BILLING EDIT</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/inventory/unit" class="nav-link">
+                            UNIT
+                        </a>
+                    </li>
+                   
+                    <li class="dropdown nav-item">
+                        <a href="javascript:;" class="dropdown-toggle nav-link" data-toggle="dropdown">PAYMENT</a>
+                        <div class="dropdown-menu">
+                            <a href="/inventory/payment_add" class="dropdown-item">BILL PAYMENT </a>
+                            <a href="/inventory/purchase_payment" class="dropdown-item">PURCHASE PAYMENT</a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="javascript:;" class="dropdown-toggle nav-link" data-toggle="dropdown">DETIALS</a>
+                        <div class="dropdown-menu">
+                            <a href="/inventory/bank" class="dropdown-item">BANK DETAILS</a>
+                            <a href="/inventory/companydetail" class="dropdown-item">COMPANY DETAILS</a>
+                        </div>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+       <script src="../../static/assest/assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="../../static/assest/assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="../../static/assest/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="../../static/assest/assets/js/plugins/moment.min.js"></script>
+    <!--  Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="../../static/assest/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../../static/assest/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <!--  Google Maps Plugin    -->
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script src="../../static/assest/assets/js/material-kit.js?v=2.0.7" type="text/javascript"></script>
+    <script>
+    $(document).ready(function() {
+        //init DateTimePickers
+        materialKit.initFormExtendedDatetimepickers();
+
+        // Sliders Init
+        materialKit.initSliders();
+    });
+
+
+    function scrollToDownload() {
+        if ($('.section-download').length != 0) {
+            $("html, body").animate({
+                scrollTop: $('.section-download').offset().top
+            }, 1000);
+        }
+    }
+    </script>

@@ -14,7 +14,7 @@ app.register_blueprint(inventory)
 
 @app.route("/")
 def index():
-    return redirect("/inventory")
+    return redirect("/inventory/")
 
 
 

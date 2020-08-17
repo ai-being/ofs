@@ -339,20 +339,27 @@ td {
         <button id="dashboard1" class="btn btn-primary" onclick="redirectToURL(this.id)"><i class="fa fa-tachometer" aria-hidden="true"></i>dashboard</button>
     </center>
     <div class="row" style="border: 0.001em solid; margin-bottom: 5px;">
-        <div class="col s11">
-            <div class="row">
-                <div class="col-10">
-                    <span><img src="https://i.ibb.co/8mPnBQt/ofslogo.jpg" alt="ofslogo" width="1052" height="240"border="0"></span></div>
-                <center>
-                    <b style="font-size: 14px; margin-top: 0px;"> {% if (bill.customer_type|string == 'walk-in') %}
-                        ESTITMATE
-                        {%else%}
-                        GST INVOICE
-                        {% endif %}</b>
-                </center>
-            </div>
-        </div>
+    
+        <div class="col s12">
+                <div class="row">
+                    <center>
+                        <h5 style="font-family:  'Noto Sans TC', sans-serif;font-size: 34px;margin-bottom: 0px;margin-top: 5px;margin-left: 40px;text-transform: uppercase;">OLYMPIA FITNESS SOLTUIONS</h5>
+                        <p style="font-size: 18px;margin-top: 0px;margin-bottom: 0px;text-transform: uppercase;">MADURAI</p>
+                        <b style="font-size: 18px; margin-top: 0px;text-transform: uppercase;">TAMIL NADU</b><br>
+                        <b style="font-size: 18px; margin-top: 0px;">CELL:+91 9894691973</b><br>
+                        <b style="font-size: 20px; margin-top: 0px;"></b><br>
+                        <b style="font-size: 14px; margin-top: 0px;">   {% if (bill.customer_type|string == 'walk-in') %}
+                            ESTITMATE
+                            {%else%}
+                            GST INVOICE
+                           
+{% endif %}</b>             
+                    </center>
+                </div>
+           
     </div>
+
+  
     <div class="row" style="font-size: 0.5em; margin-bottom: 0px;height: 290px">
         <div class="col s6" style="padding-left: 0px;">
             <div class='full-input' style="border: 1px black solid;width:520px;max-height: 140px; font-size: 16px;  ">
@@ -373,8 +380,10 @@ td {
                     ;font-size:22px;"><label for='email' style="margin-left: 5px;margin-bottom:0px;">BILL NO:</label>
                         <center>{{bill.invoice_no}}
                     </div>
-                    <div class='full-input' style="margin-top:5px;font-weight: bold;width: 250px;height:64px;font-size:17px;"><label for='email' style="margin-left: 5px;margin-bottom:0px;">REMARKS:</label>
+                     <div class='full-input'style="margin-top:5px;font-weight: bold;width: 250px;height:64px;font-size:17px;"><label for='email' style="margin-left: 5px;margin-bottom:0px;">REMARKS:</label>
+                       
                     </div>
+                    
                 </div>
             </div>
             <div class="col s3" style="margin-left: 125px;">
@@ -387,7 +396,7 @@ td {
                 <p></p>
             </div>
         </div>
-        <div class="table" style="font-size: 2em;min-height: 800px;max-height: 800px; border:0.5px solid">
+        <div class="table" style="font-size: 2em;min-height: 1100px;max-height: 1100px; border:0.5px solid">
             <table class="t-table">
                 <thead style="margin-left:5px;">
                     <tr>
@@ -407,8 +416,10 @@ td {
                     <tr>
                         <td height="5" class="tb-data" style="text-align:center;">{{ count.value }}</td>
                         <td class="tb-data" style="width:300px;padding-left: 5px;text-transform: uppercase;">{{ data['product.product_name'] }}</td>
+                        
                         <td class="tb-data" style="text-align:right;padding-right: 5px">{{ data.quantity }}</td>
                         <td class="tb-data" style="text-align:right;padding-right:5px;">{{ "%.2f"| format(data.value) }}</td>
+                        
                         <td class="tb-data" style="text-align:right;padding-right:5px;">{{"%.2f"| format( data.discount )}}</td>
                         <td class='tb-data' style='width: 80px;text-align: center;padding-right:5px;'>{{data.gst}}</td>
                         <!--  <td class="tb-data" id='gst'>{{ gst }}</td> -->
@@ -422,13 +433,16 @@ td {
         </div>
         <div class="row" style="margin-top: 1px;margin-bottom: 0px;">
             <div class="col s9" align="right" style="padding-left: 0px;padding-right: 0px;">
-                <div style="text-align: left">
-                    <span style="font-size: 16px">RUPESS IN WORDS: </span><span style="font-size: 20px;font-weight: bold" id="js_amt"></span><br>
-                    {% if (bill.customer_type|string == 'walk-in') %}
-                    {%else%}
-                    <span style="font-size: 16px">RUPESS IN WORDS: </span><span style="font-size: 20px;font-weight: bold" id="js_amt_gst"></span><br>
-                    {% endif %}
-                </div>
+               <div style="text-align: left">
+                <span style="font-size: 16px">RUPESS IN WORDS:</span><span style="font-size: 20px;font-weight: bold"id="js_amt"></span><br>
+
+                 {% if (bill.customer_type|string == 'walk-in') %}
+                            {%else%}
+                                   <span style="font-size: 16px">RUPESS IN WORDS:</span><span style="font-size: 20px;font-weight: bold"id="js_amt_gst"></span><br>
+
+                           
+{% endif %}
+            </div>
             </div>
             <div class="col s3" style="padding-left: 24px">
                 <div class="row" style=" width:250px;border: solid; border-width: 0.9px; font-size: 1.2em; margin-top: 0px;margin-bottom: 0px; margin-left:px;font-weight: bold;font-size: 2em">
@@ -450,10 +464,12 @@ td {
                                 <th style="text-align: left;margin-left:1px;">IGST</th>
                                 <td style="text-align: right;margin-right:15px;width:100px;padding-right: 5px;">{{bill.igst}}</td>
                             </tr>
+                           
                             <tr>
                                 <th style="text-align: left;margin-left:1px;">Rounded off</th>
                                 <td style="text-align: right;margin-right:15px;width:100px;padding-right: 5px;">{{bill.roundoff}}</td>
                             </tr>
+
                             <tr>
                                 <th style="text-align: left;margin-left:1px;">Grand Total:</th>
                                 <td style="text-align: right;margin-right:15px;width:100px;padding-right: 5px;">{{bill.grand_total}}</td>
@@ -461,7 +477,8 @@ td {
                         </tbody>
                     </table>
                     <div style="text-align: left">
-                    </div>
+
+            </div>
                 </div>
                 <div class="row" style="width:250px;border: solid; border-width: 0.9px; font-size: 1em; margin-top: 0px;margin-bottom: 0px;">
                     <div align="right">
@@ -469,40 +486,40 @@ td {
                         <span style="text-align:right;font-size: 28px;font-weight:bold">&#8377;{{"%.2f"| format(bill.grand_total)}}</h5>
                         </span>
                     </div>
+                    
                 </div>
+                 
             </div>
         </div>
         <div class="row" style="margin-top: 12px">
-            <div class="col s8" style="border: solid;border-width: 0.9px;position: static;bottom: 20px;margin-bottom: 0px; margin-top: 1px;font-size:16px;font-weight: bold;min-height: 78px">
-                <center>GOODS ONCE SOLD CAN'T BE TAKEN BACK </center>
-            </div>
-            <div class="col s4" style=" font-size:0.9em;font-weight: bold;border: solid; border-width: 0.9px; height: 80px;margin-bottom: 1px; margin-top: 0px;font-size: 2em">For
-                OLYMPIA FITNESS MADURAI<br>
+             <div class="col s8" style="border: solid;border-width: 0.9px;position: static;bottom: 20px;margin-bottom: 0px; margin-top: 1px;font-size:16px;font-weight: bold;min-height: 78px">
+    <center>GOODS ONCE SOLD CAN'T BE TAKEN BACK          </center>  </div>
+            <div class="col s4" style=" font-size:0.9em;font-weight: bold;border: solid; border-width: 0.9px; height: 80px;margin-bottom: 1px; margin-top: 0px;font-size: 2em" >For
+                OLYMPIA FITNESS SOLUTION<br>
                 <div class="row" style="margin-top:34px;margin-left: 5px">
                     Authorised Signatory</br>
                 </div>
             </div>
         </div>
-        <div class="row center-align" style="border: solid; border-width: 0.9px; position: static ; bottom: 20px; margin-bottom: 0px;margin-top: 1px;font-size:15px;font-weight: bold;">
-            STATE BANK OF INDIA,SME BRANCH,MDU,AC,NO:00000000.IFSC CODE:00000000000
+           
+         >
         </div>
-    </div>
-    <script type="text/javascript">
-    let js_amt = document.getElementById("js_amt");
-    let amt_head = convertNumberToWords({{ bill.grand_total }});
-    let amt_tail = convertNumberToWords(parseFloat("{{bill.grand_total}}").toFixed(2).split(".")[1]);
-    js_amt.innerHTML = "Taxable amt. " + amt_head + " rupees and " + amt_tail + " paise only";
+        <script type="text/javascript">
+        let js_amt = document.getElementById("js_amt");
+        let amt_head = convertNumberToWords({{bill.grand_total }});
+        let amt_tail = convertNumberToWords(parseFloat("{{bill.grand_total}}").toFixed(2).split(".")[1]);
+        js_amt.innerHTML = "Taxable amt. " + amt_head + " rupees and " + amt_tail + " paise only";
 
 
-    let js_amt_gst = document.getElementById("js_amt_gst");
-    let amt_head_gst = convertNumberToWords({{ bill.cgst + bill.sgst }});
-    let amt_tail_gst = convertNumberToWords(parseFloat("{{bill.cgst + bill.sgst }}").toFixed(2).split(".")[1]);
-    js_amt_gst.innerHTML = "GST value" + amt_head_gst + " rupees and " + amt_tail_gst + " paise only";
+        let js_amt_gst = document.getElementById("js_amt_gst");
+        let amt_head_gst = convertNumberToWords({{bill.cgst + bill.sgst }});
+        let amt_tail_gst = convertNumberToWords(parseFloat("{{bill.cgst + bill.sgst }}").toFixed(2).split(".")[1]);
+        js_amt_gst.innerHTML = "GST value" + amt_head_gst + " rupees and " + amt_tail_gst + " paise only";
 
-    let js_net = document.getElementById("net_js");
-    let net_amt = convertNumberToWords({{ bill.grand_total }});
-    js_net.innerHTML = "Rupees " + net_amt + " only";
-    </script>
+        let js_net = document.getElementById("net_js");
+        let net_amt = convertNumberToWords({{bill.grand_total }});
+        js_net.innerHTML = "Rupees " + net_amt + " only";
+        </script>
 </body>
 
 </html>
